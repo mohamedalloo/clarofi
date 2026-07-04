@@ -3,5 +3,5 @@
    Row Level Security on the database is what protects the data. */
 window.LUMO_CONFIG = {
   SUPABASE_URL: 'https://obxcafbmkclhnvsgmgwh.supabase.co',
-  SUPABASE_ANON_KEY: '' /* filled during setup */
+  SUPABASE_ANON_KEY: 'sb_publishable_d8u4fpRxYW4LvEE7AfbD_w_U6WSCQkV'
 };
