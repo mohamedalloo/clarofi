@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLAROFI DESK — MLO Command Deck</title>
+<title>LumoLend Desk — MLO Command Deck</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/theme.css">
@@ -92,7 +92,7 @@
 <header class="bar">
   <a class="mark" href="index.html">
     <div class="glyph"><i></i><i></i><i></i></div>
-    <div class="wordmark">CLARO<em>FI</em><span class="mode">/ DESK</span></div>
+    <div class="wordmark">LUMO<em>LEND</em><span class="mode">/ DESK</span></div>
   </a>
   <span class="chip" id="deskChip">PIPELINE <b>—</b></span>
 </header>
@@ -105,7 +105,7 @@
   <main class="detail" id="detail"></main>
 </div>
 
-<footer class="legal">CLAROFI DESK prototype — internal tooling view. All borrower data on this screen is simulated demo data.</footer>
+<footer class="legal">LumoLend Desk prototype — internal tooling view. All borrower data on this screen is simulated demo data.</footer>
 
 <script src="assets/core.js"></script>
 <script>
@@ -244,7 +244,7 @@ function genLenders(f){
 
 function genScript(f){
  const a=f.answers,nm=f.first||'there',s=[];
- s.push(['OPEN','“Hi '+nm+' — Alex from the CLAROFI desk. I’ve got your whole run in front of me, so no forms, no re-asking. Twelve minutes and you’ll know the exact path.”']);
+ s.push(['OPEN','“Hi '+nm+' — Alex from the LumoLend desk. I’ve got your whole run in front of me, so no forms, no re-asking. Twelve minutes and you’ll know the exact path.”']);
  if(f.flowKey==='home'&&a.vet==='yes')s.push(['LEAD WITH','VA eligibility — zero down, no MI. It priced strongest on their run; confirm entitlement is unused.']);
  else if(f.flowKey==='home'&&a.income==='bank')s.push(['LEAD WITH','“Your deposits qualify you — not your tax returns.” They chose the bank-statement path; validate 12 months of statements are reachable.']);
  else if(f.flowKey==='heloc')s.push(['LEAD WITH','They optimized for '+({days:'speed — confirm the rate premium is understood',weeks:'balance — confirm 2–3 weeks works for their use of funds',slow:'price — confirm nothing forces the timeline'}[a.speed]||'their term choice')+'.']);
@@ -272,7 +272,7 @@ function renderQueue(){
  $('qList').innerHTML='';
  files.forEach(f=>{
   const b=document.createElement('button');b.className='qitem'+(f.id===sel?' sel':'');
-  const isNew=(Date.now()-new Date(f.created))<3600000&&!f.id.startsWith('CF-DEMO');
+  const isNew=(Date.now()-new Date(f.created))<3600000&&!f.id.startsWith('LL-DEMO');
   const pillCls={priced:'',verified:'cyan',preapproved:'green',desk:'green'}[f.status]||'';
   b.innerHTML=`<div class="qtop"><span class="qname">${f.first} ${f.last||''}</span>${isNew?'<span class="qnew">NEW</span>':`<span class="pill ${pillCls}">${statusLabel(f)}</span>`}</div>
    <div class="qsub"><b>${moneyK(f.pricing.loan)}</b> · ${FLOW_LABELS[f.flowKey]} · ${ago(f.created)}</div>`;

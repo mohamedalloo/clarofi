@@ -1,4 +1,4 @@
-# CLAROFI
+# LumoLend
 
 **AI finds it. A human funds it.**
 
@@ -33,7 +33,7 @@ The internal view. The borrower's file arrives fully assembled — nothing gets 
 ## Architecture
 
 ```
-clarofi/
+lumolend/
 ├── index.html          # Pricer — self-contained (single-file artifact)
 ├── preapprove.html     # Pre-approver
 ├── desk.html           # MLO command deck
@@ -42,7 +42,7 @@ clarofi/
     └── core.js         # Helpers, LoanFile persistence, pricing firm-up, demo data
 ```
 
-**State handoff.** A `LoanFile` JSON travels between surfaces two ways at once: URL hash (`#f=<base64>`) for portability, `localStorage` (`clarofi_file` + `clarofi_pipeline`) for persistence. Works from `file://` with zero backend.
+**State handoff.** A `LoanFile` JSON travels between surfaces two ways at once: URL hash (`#f=<base64>`) for portability, `localStorage` (`lumolend_file` + `lumolend_pipeline`) for persistence. Works from `file://` with zero backend.
 
 **Pricing firm-up model.** `firmedBand()` in `core.js`: each completed verification removes a share of the indicative spread; a fully verified file keeps ~22% of the original band. The floor creeps up slightly as the band tightens — honesty over theater.
 

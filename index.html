@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLAROFI — AI finds it. A human funds it.</title>
+<title>LumoLend — AI finds it. A human funds it.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -194,7 +194,7 @@ footer{position:relative;z-index:2;padding:20px clamp(18px,4vw,48px) 30px;font-s
   <header>
     <div class="mark" onclick="restart()">
       <div class="glyph"><i></i><i></i><i></i></div>
-      <div class="wordmark">CLARO<em>FI</em></div>
+      <div class="wordmark">LUMO<em>LEND</em></div>
     </div>
     <span><button class="restart" style="margin-right:8px;border-color:var(--cyan-dim);color:var(--cyan)" onclick="openSave()">SAVE RUN</button><button class="restart" onclick="restart()">RESET</button></span>
   </header>
@@ -229,7 +229,7 @@ footer{position:relative;z-index:2;padding:20px clamp(18px,4vw,48px) 30px;font-s
 </div>
 
 <footer>
-  CLAROFI prototype. Rates are indicative illustrative ranges, not an offer or commitment to lend; subject to full underwriting. NMLS #2732105 · Equal Housing Lender. Primary-residence loans carry additional required disclosures including APR.\n  <span style="float:right"><a href="desk.html" style="color:var(--faint);text-decoration:none;font-family:var(--disp);letter-spacing:.2em">MLO DESK \u2192</a></span>
+  LumoLend prototype. Rates are indicative illustrative ranges, not an offer or commitment to lend; subject to full underwriting. NMLS #2732105 · Equal Housing Lender. Primary-residence loans carry additional required disclosures including APR.\n  <span style="float:right"><a href="desk.html" style="color:var(--faint);text-decoration:none;font-family:var(--disp);letter-spacing:.2em">MLO DESK \u2192</a></span>
 </footer>
 
 <script>
@@ -625,7 +625,7 @@ function saveRun(){
  const e=liveEstimate(),r=computeResults();
  const pick=r.cards.find(c=>c.rec)||r.cards[0];
  const file={
-  id:'CF-'+Date.now().toString(36).toUpperCase().slice(-6),
+  id:'LL-'+Date.now().toString(36).toUpperCase().slice(-6),
   created:new Date().toISOString(),
   first,last:$('gLast').value.trim(),email,phone:$('gPhone').value.trim(),
   flowKey:state.flowKey,answers:state.answers,
@@ -637,9 +637,9 @@ function saveRun(){
   status:'priced'
  };
  try{
-  localStorage.setItem('clarofi_file',JSON.stringify(file));
-  const pl=JSON.parse(localStorage.getItem('clarofi_pipeline')||'[]');
-  pl.unshift(file);localStorage.setItem('clarofi_pipeline',JSON.stringify(pl.slice(0,20)));
+  localStorage.setItem('lumolend_file',JSON.stringify(file));
+  const pl=JSON.parse(localStorage.getItem('lumolend_pipeline')||'[]');
+  pl.unshift(file);localStorage.setItem('lumolend_pipeline',JSON.stringify(pl.slice(0,20)));
  }catch(_){}
  runSaved=true;
  $('saved').style.display='block';

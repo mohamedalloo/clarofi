@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLAROFI — Pre-Approval Engine</title>
+<title>LumoLend — Pre-Approval Engine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/theme.css">
@@ -126,7 +126,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 <header class="bar">
   <a class="mark" href="index.html">
     <div class="glyph"><i></i><i></i><i></i></div>
-    <div class="wordmark">CLARO<em>FI</em><span class="mode">/ PRE-APPROVAL</span></div>
+    <div class="wordmark">LUMO<em>LEND</em><span class="mode">/ PRE-APPROVAL</span></div>
   </a>
   <span class="chip" id="fileChip">FILE <b>—</b></span>
 </header>
@@ -136,7 +136,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 <div id="printzone" style="display:none"></div>
 
 <footer class="legal">
-  CLAROFI prototype. Verifications are simulated for demonstration. Pre-approval letters are illustrative and conditional; not a commitment to lend. NMLS #2732105 · Equal Housing Lender.
+  LumoLend prototype. Verifications are simulated for demonstration. Pre-approval letters are illustrative and conditional; not a commitment to lend. NMLS #2732105 · Equal Housing Lender.
 </footer>
 
 <script src="assets/core.js"></script>
@@ -156,7 +156,7 @@ function renderEmpty(){
 }
 function loadDemo(){
  file=demoFiles()[0];
- file.id='CF-DEMO00';file.verifications={credit:null,assets:null,income:null};file.status='priced';
+ file.id='LL-DEMO00';file.verifications={credit:null,assets:null,income:null};file.status='priced';
  saveLoanFile(file);renderApp();
 }
 
@@ -343,11 +343,11 @@ function renderPaper(){
  const html=`
  <div class="paper" id="letterPaper">
   <div class="phead">
-    <div><div class="pmark">CLARO<em>FI</em></div><div style="font-size:9px;letter-spacing:.2em;color:#5A6570;margin-top:4px;font-family:var(--disp)">LENDING DESK</div></div>
+    <div><div class="pmark">LUMO<em>LEND</em></div><div style="font-size:9px;letter-spacing:.2em;color:#5A6570;margin-top:4px;font-family:var(--disp)">LENDING DESK</div></div>
     <div class="pmeta">LETTER ${lid}<br>ISSUED ${fmt(d).toUpperCase()}<br>VALID THROUGH ${fmt(exp).toUpperCase()}</div>
   </div>
   <h2>Conditional Pre-Approval</h2>
-  <p><b>${fullName}</b> has been reviewed by the CLAROFI lending desk and is conditionally pre-approved for financing in the amount of:</p>
+  <p><b>${fullName}</b> has been reviewed by the LumoLend lending desk and is conditionally pre-approved for financing in the amount of:</p>
   <div class="amt">${money(power)}</div>
   <table>
     <tr><td>Program</td><td>${file.pricing.pick.name}</td></tr>
@@ -359,8 +359,8 @@ function renderPaper(){
   </table>
   <p class="conds">Subject to: satisfactory property appraisal and title; no material change in verified credit, income, or assets; full underwriting review. This letter is not a rate lock or commitment to lend.</p>
   <div class="sig">
-    <div><div class="sname">Alex Delgado</div><div class="stitle">Senior Mortgage Loan Originator<br>NMLS #2732105 · desk@clarofi.com</div></div>
-    <div class="seal">VERIFIED<br>✓<br>CLAROFI DESK</div>
+    <div><div class="sname">Alex Delgado</div><div class="stitle">Senior Mortgage Loan Originator<br>NMLS #2732105 · desk@lumolend.com</div></div>
+    <div class="seal">VERIFIED<br>✓<br>LUMOLEND DESK</div>
   </div>
  </div>`;
  $('paperwrap').innerHTML=html;
