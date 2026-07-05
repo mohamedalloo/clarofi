@@ -184,6 +184,18 @@ input[type=range]:focus-visible::-webkit-slider-thumb{outline:2px solid var(--cy
 .modal input[type=email]:focus{border-color:var(--cyan);outline:none;box-shadow:0 0 12px var(--cyan-ghost)}
 .mnote{font-size:10.5px;color:var(--faint);margin-top:12px;line-height:1.55;text-align:center}
 
+
+/* ---- trust strip ---- */
+.truststrip{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:36px clamp(18px,4vw,48px) 6px;text-align:center}
+.truststrip .tlabel{font-family:var(--disp);font-size:9.5px;letter-spacing:.3em;color:var(--mut);margin-bottom:20px;display:flex;align-items:center;gap:14px;justify-content:center}
+.truststrip .tlabel::before,.truststrip .tlabel::after{content:'';width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan-dim));flex-shrink:0}
+.truststrip .tlabel::after{background:linear-gradient(90deg,var(--cyan-dim),transparent)}
+.tlogos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 36px;align-items:center}
+.tlogos span{font-family:var(--disp);font-weight:500;font-size:13px;letter-spacing:.22em;color:var(--faint);transition:.25s;cursor:default;white-space:nowrap}
+.tlogos span:hover{color:var(--txt);text-shadow:0 0 18px var(--cyan-ghost)}
+.tmeta{margin-top:18px;font-size:10.5px;color:var(--faint);letter-spacing:.04em;line-height:1.7;max-width:64ch;margin-left:auto;margin-right:auto}
+.tmeta b{color:var(--green);font-weight:500}
+
 footer{position:relative;z-index:2;padding:20px clamp(18px,4vw,48px) 30px;font-size:10.5px;color:var(--faint);line-height:1.7;max-width:860px;margin:0 auto}
 </style>
 </head>
@@ -232,6 +244,12 @@ footer{position:relative;z-index:2;padding:20px clamp(18px,4vw,48px) 30px;font-s
   <div class="mnote">One save link. No calls, no lists, no spam &mdash; your numbers stay yours.</div>
  </div>
 </div>
+
+<section class="truststrip" aria-label="Lender network">
+  <div class="tlabel">EVERY SCENARIO SHOPS A LIVE LENDER PANEL</div>
+  <div class="tlogos"><span>ROCKET MORTGAGE</span><span>FIGURE</span><span>PENNYMAC</span><span>HOMEBRIDGE</span><span>NFTYDOOR</span></div>
+  <div class="tmeta"><b>100+ programs</b> compared per run &middot; Soft credit only &mdash; never a hard pull without your written OK &middot; 256-bit encryption &middot; Representative panel; lender availability varies by scenario and state.</div>
+</section>
 
 <footer>
   LumoLend prototype. Rates are indicative illustrative ranges, not an offer or commitment to lend; subject to full underwriting. NMLS #2732105 · Equal Housing Lender. Primary-residence loans carry additional required disclosures including APR. <span style="float:right"><a href="desk.html" style="color:var(--faint);text-decoration:none;font-family:var(--disp);letter-spacing:.2em">MLO DESK &rarr;</a></span>
