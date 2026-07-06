@@ -58,17 +58,31 @@ create table if not exists public.email_outbox (
 -- MLO roster. One row per officer; every new lead routes to an
 -- active MLO server-side and the borrower learns who by email.
 -- Add rows here as the team grows — no client code changes.
+-- highlights: jsonb array of strings shown as the "why this MLO"
+-- bullets in the matched email.
 create table if not exists public.mlos (
   slug text primary key,
   name text not null,
   email text not null,
   nmls text,
+  company text,
+  highlights jsonb,
   active boolean not null default true
 );
+alter table public.mlos add column if not exists company text;
+alter table public.mlos add column if not exists highlights jsonb;
 
-insert into public.mlos (slug, name, email, nmls)
-values ('m-alloo', 'Moh Alloo', 'alloo.mohamed@gmail.com', '2732105')
-on conflict (slug) do nothing;
+insert into public.mlos (slug, name, email, nmls, company, highlights)
+values ('m-alloo', 'Moh Alloo', 'alloo.mohamed@gmail.com', '2732105', 'West Capital Lending', jsonb_build_array(
+  'Extensive finance background, including work experience at Amazon and Apple',
+  'Top cash-out / lending expert at West Capital Lending',
+  'Top 1% on-time closing record',
+  'Access to a 90+ lender network',
+  'Near-perfect 5-star customer rating'
+))
+on conflict (slug) do update
+  set name = excluded.name, email = excluded.email, nmls = excluded.nmls,
+      company = excluded.company, highlights = excluded.highlights;
 
 -- ---------- row level security ----------
 alter table public.runs enable row level security;
@@ -203,23 +217,50 @@ create or replace function public.on_new_lead()
 returns trigger language plpgsql security definer set search_path = public as $$
 declare
   v_mlo public.mlos;
+  v_first text;
+  v_bullets text;
+  v_matched text := '';
 begin
   v_mlo := public.pick_mlo(new.flow);
   if v_mlo.slug is not null then
     update public.leads set lo_slug = v_mlo.slug where id = new.id;
+
+    v_first := split_part(v_mlo.name, ' ', 1);
+    select coalesce(string_agg('<li style="margin:6px 0">' || h || '</li>', ''), '')
+      into v_bullets
+      from jsonb_array_elements_text(coalesce(v_mlo.highlights, '[]'::jsonb)) h;
+
+    v_matched :=
+      '<p style="color:#B9C6CC;font-size:14px;line-height:1.75;margin:0 0 6px">You&rsquo;ve been matched with: <b style="color:#E9F4F6">' ||
+      v_mlo.name || coalesce(' @ ' || v_mlo.company, '') || '</b> (CC&rsquo;d on this email). Here are a few reasons ' ||
+      v_first || ' is the right fit:</p>' ||
+      case when v_bullets <> '' then
+      '<div style="background:#0C1218;border:1px solid #1B2833;border-radius:8px;padding:16px 22px;margin:14px 0 20px">' ||
+      '<ul style="margin:0;padding-left:18px;color:#B9C6CC;font-size:13.5px;line-height:1.8">' || v_bullets || '</ul></div>'
+      else '' end ||
+      '<p style="color:#B9C6CC;font-size:14px;line-height:1.75">Look out for a text message or email from ' || v_first ||
+      ' on next steps. In the meantime, don&rsquo;t be shy &mdash; reply to this email with any questions.</p>';
   end if;
 
   perform public.send_email(
     new.email,
-    'Scenario locked — meet your loan officer',
-    '<div style="font-family:sans-serif;max-width:560px"><h2>' || new.first_name || ', your scenario is locked.</h2>' ||
-    '<p>Program: <b>' || coalesce(new.program,'—') || '</b><br>Loan: <b>$' || coalesce(round(new.loan)::text,'—') ||
-    '</b><br>Indicative band: <b>' || coalesce(new.rate_lo::text,'—') || '% – ' || coalesce(new.rate_hi::text,'—') || '%</b></p>' ||
-    coalesce('<p>Your loan officer is <b>' || v_mlo.name || '</b> (NMLS #' || coalesce(v_mlo.nmls,'—') ||
-    '), copied on this email. Your full run transfers to them exactly as you built it — nothing gets re-asked.</p>', '') ||
-    '<p>Next: confirm your details — it takes a minute, and your scenario moves to the front of the review queue.</p>' ||
-    '<p><a href="https://lumolend.com/preapprove.html" style="background:#00E67A;color:#04140B;padding:12px 24px;text-decoration:none;border-radius:4px;font-weight:bold">CONTINUE MY REVIEW &rarr;</a></p>' ||
-    '<p style="color:#777;font-size:12px">Indicative ranges, not an offer or commitment to lend. LumoLend · NMLS #2732105 · Equal Housing Lender</p></div>',
+    'You''ve been matched — your scenario is in review',
+    '<div style="background:#05080C;padding:36px 18px;font-family:Arial,Helvetica,sans-serif">' ||
+    '<div style="max-width:560px;margin:0 auto">' ||
+    '<div style="font-size:15px;letter-spacing:6px;font-weight:bold;color:#E9F4F6;margin-bottom:26px">LUMO<span style="color:#5FE9FF">LEND</span></div>' ||
+    '<h1 style="color:#E9F4F6;font-size:26px;margin:0 0 18px">You&rsquo;ve been matched.</h1>' ||
+    '<p style="color:#B9C6CC;font-size:14px;line-height:1.75">' || new.first_name ||
+    ' &mdash; congrats! Your scenario is locked and in review. Your loan officer will firm your numbers against the live lender panel and guide you through every step &mdash; nothing gets re-asked.</p>' ||
+    v_matched ||
+    '<div style="background:#0C1218;border:1px solid #1B2833;border-radius:8px;padding:14px 22px;margin:6px 0 22px">' ||
+    '<span style="color:#7C8F99;font-size:10px;letter-spacing:2px">YOUR SCENARIO</span><br>' ||
+    '<span style="color:#E9F4F6;font-size:13.5px;line-height:1.9">' || coalesce(new.program,'&mdash;') ||
+    ' &middot; Loan <b style="color:#00E67A">$' || coalesce(round(new.loan)::text,'&mdash;') || '</b>' ||
+    ' &middot; Indicative band <b style="color:#5FE9FF">' || coalesce(new.rate_lo::text,'&mdash;') || '% &ndash; ' || coalesce(new.rate_hi::text,'&mdash;') || '%</b></span></div>' ||
+    '<p style="margin:0 0 28px"><a href="https://lumolend.com/preapprove.html" style="background:#00E67A;color:#04140B;padding:13px 26px;text-decoration:none;border-radius:4px;font-weight:bold;font-size:13px">CONTINUE MY REVIEW &rarr;</a></p>' ||
+    '<p style="color:#B9C6CC;font-size:14px;line-height:1.7;margin:0 0 26px">Sincerely,<br><b style="color:#E9F4F6">The LumoLend Team</b></p>' ||
+    '<p style="color:#3A4A54;font-size:11px;line-height:1.7;border-top:1px solid #1B2833;padding-top:14px;margin:0">Indicative ranges, not an offer or commitment to lend; subject to full underwriting. LumoLend &middot; NMLS #2732105 &middot; Equal Housing Lender.</p>' ||
+    '</div></div>',
     'lead_locked',
     v_mlo.email
   );
