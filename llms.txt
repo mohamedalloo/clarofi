@@ -20,14 +20,34 @@
 ## Guides (expert content, reviewed by a licensed MLO)
 
 - https://lumolend.com/guides/ — guide hub
-- https://lumolend.com/guides/dscr-loans/ — DSCR loans: coverage math, requirements, prepay trade-offs
-- https://lumolend.com/guides/bank-statement-loans/ — bank-statement mortgages for the self-employed
-- https://lumolend.com/guides/airbnb-str-loans/ — financing short-term rentals; actuals vs projections
-- https://lumolend.com/guides/fix-and-flip-bridge-loans/ — bridge loans: LTC, ARV, draws, carry math
-- https://lumolend.com/guides/heloc-vs-cash-out-refi/ — HELOC vs cash-out refinance decision math
-- https://lumolend.com/guides/va-loans-zero-down/ — VA loan eligibility, COE, funding fee, entitlement
-- https://lumolend.com/guides/dti-explained/ — debt-to-income: formula, caps, and fixes
-- https://lumolend.com/guides/preapproval-vs-prequalification/ — what sellers actually trust
+- https://lumolend.com/guides/dscr-loans/ — Coverage math, requirements, prepay trade-offs.
+- https://lumolend.com/guides/bank-statement-loans/ — Qualify on deposits, not tax returns.
+- https://lumolend.com/guides/airbnb-str-loans/ — Actuals vs projections, the 20% haircut.
+- https://lumolend.com/guides/fix-and-flip-bridge-loans/ — LTC caps, ARV ceilings, draw schedules.
+- https://lumolend.com/guides/heloc-vs-cash-out-refi/ — Second lien vs new first — the real math.
+- https://lumolend.com/guides/va-loans-zero-down/ — Eligibility, COE, funding fee, entitlement.
+- https://lumolend.com/guides/dti-explained/ — The formula, the caps, and how to fix yours.
+- https://lumolend.com/guides/preapproval-vs-prequalification/ — What sellers trust, and why amounts matter.
+- https://lumolend.com/guides/itin-mortgage-loans/ — Home loans for ITIN holders, no SSN required
+- https://lumolend.com/guides/asset-depletion-loans/ — Qualify on savings and investments, not income
+- https://lumolend.com/guides/mortgage-for-1099-contractors/ — Mortgage paths for contractors and gig workers
+- https://lumolend.com/guides/self-employed-mortgage-requirements/ — The full documentation playbook for business owners
+- https://lumolend.com/guides/cash-out-refinance-investment-property/ — Pull equity out of a rental the smart way.
+- https://lumolend.com/guides/heloc-on-investment-property/ — Tap rental equity without touching your first lien.
+- https://lumolend.com/guides/investment-property-down-payment/ — What you'll really put down, path by path.
+- https://lumolend.com/guides/second-home-vs-investment-property/ — Get the occupancy classification right the first time.
+- https://lumolend.com/guides/interest-only-mortgages/ — When paying interest only actually makes sense
+- https://lumolend.com/guides/prepayment-penalties-explained/ — What early payoff really costs investors
+- https://lumolend.com/guides/mortgage-rate-locks-explained/ — When to lock and what it costs
+- https://lumolend.com/guides/fha-vs-conventional/ — Which low-down-payment path costs less
+- https://lumolend.com/guides/dscr-loans-texas/ — Heavy property taxes meet landlord-friendly courts
+- https://lumolend.com/guides/dscr-loans-florida/ — Wind insurance, condo rules, doc stamps, STRs
+- https://lumolend.com/guides/dscr-loans-california/ — High prices, thin ratios — sizing leverage honestly
+- https://lumolend.com/guides/dscr-loans-arizona/ — Low taxes and STR-friendly law keep deals penciling
+- https://lumolend.com/guides/dscr-loans-tennessee/ — Cabin STRs, low taxes, landlord-friendly cash flow
+- https://lumolend.com/guides/dscr-loans-north-carolina/ — Charlotte-to-coast coverage math and closing quirks
+- https://lumolend.com/guides/dscr-loans-georgia/ — Atlanta rentals, fast courts, intangibles-tax math
+- https://lumolend.com/guides/dscr-loans-ohio/ — High coverage ratios, county tax traps, loan floors
 
 ## Company
 
