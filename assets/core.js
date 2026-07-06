@@ -66,35 +66,6 @@ function statusLabel(f) {
   return { priced: 'PRICED', verified: 'VERIFIED', preapproved: 'PRE-APPROVED', desk: 'AT THE DESK' }[f.status] || 'PRICED';
 }
 
-/* ---------- loan officer matching ----------
-   The close: every finished run unlocks the officer whose track
-   record best fits THIS deal — not a queue, a curation.        */
-const LO_ROSTER = {
-  'a-delgado':  { name: 'Alex Delgado',   initials: 'AD', nmls: '2732105', years: 14, closeDays: 19, closeRate: 97, funded: '$310M', specialty: 'Purchase & jumbo', focus: 'Contract-clock purchases' },
-  'm-chen':     { name: 'Maya Chen',      initials: 'MC', nmls: '1948213', years: 11, closeDays: 21, closeRate: 96, funded: '$240M', specialty: 'Bank-statement & self-employed', focus: 'Non-QM income files' },
-  'r-vasquez':  { name: 'Rico Vasquez',   initials: 'RV', nmls: '2214506', years: 9,  closeDays: 17, closeRate: 95, funded: '$185M', specialty: 'VA & first responders', focus: 'Zero-down VA plays' },
-  'j-okonkwo':  { name: 'Jade Okonkwo',   initials: 'JO', nmls: '2087931', years: 12, closeDays: 18, closeRate: 97, funded: '$275M', specialty: 'Investor / DSCR', focus: 'Rental portfolios & STR' },
-  'd-marsh':    { name: 'Dane Marsh',     initials: 'DM', nmls: '1765402', years: 15, closeDays: 8,  closeRate: 94, funded: '$390M', specialty: 'Bridge & fix-and-flip', focus: 'Operator-speed closings' },
-  's-albrecht': { name: 'Sana Albrecht',  initials: 'SA', nmls: '2390185', years: 8,  closeDays: 11, closeRate: 96, funded: '$150M', specialty: 'Home equity & rapid closes', focus: 'HELOC / HELOAN in days' },
-  'k-ito':      { name: 'Ken Ito',        initials: 'KI', nmls: '2101877', years: 13, closeDays: 22, closeRate: 97, funded: '$265M', specialty: 'ITIN & foreign national', focus: 'Specialist lender panel' }
-};
-
-function matchLO(file) {
-  const a = file.answers || {}, fk = file.flowKey;
-  let slug = { home: 'a-delgado', refi: 'a-delgado', dscr: 'j-okonkwo', str: 'j-okonkwo', bridge: 'd-marsh', heloc: 's-albrecht' }[fk] || 'a-delgado';
-  const reasons = [];
-  if (fk === 'home' && a.vet === 'yes') { slug = 'r-vasquez'; reasons.push('VA files are his entire book — zero-down structuring, entitlement math, appraisal escalations.'); }
-  else if ((fk === 'home' || fk === 'refi') && (a.income === 'bank' || a.income === 'asset')) { slug = 'm-chen'; reasons.push('Closes bank-statement income files other desks bounce — deposit analysis is her home turf.'); }
-  else if (a.citizen === 'itin' || a.citizen === 'visa') { slug = 'k-ito'; reasons.push('Runs the ITIN / visa lender panel personally — routes you to lenders who actually fund these.'); }
-  const lo = LO_ROSTER[slug];
-  if (fk === 'bridge') reasons.push('Median ' + lo.closeDays + '-day close on bridge capital — speaks basis, ARV and draws, not paperwork.');
-  else if (fk === 'dscr' || fk === 'str') reasons.push('Investor-only book: DSCR structuring, prepay trade-offs, entity vesting done weekly.');
-  else if (fk === 'heloc') reasons.push('Specializes in ' + (a.speed === 'days' ? '5–7 day equity closes — your exact speed pick.' : 'equity lending — line vs. fixed structured to your plan.'));
-  else if (!reasons.length) reasons.push('Highest close rate on ' + FLOW_LABELS[fk].toLowerCase() + ' files on the desk — ' + lo.closeRate + '% funded once locked.');
-  reasons.push('Your full verified file transfers instantly — the first call starts at the finish line, not the forms.');
-  return { slug, lo, reasons };
-}
-
 /* ---------- demo files (seed the desk pipeline) ---------- */
 function demoFiles() {
   const now = Date.now();

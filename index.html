@@ -318,6 +318,8 @@ home:[
    {v:'contract',label:'Under contract',sub:'The clock is running'}]},
  {id:'price',act:1,eyebrow:'PROPERTY',q:'What\u2019s your price range?',sub:'Rough is fine — everything stays adjustable.',type:'slider',key:'price',min:200000,max:2500000,step:25000,def:750000,fmt:money},
  {id:'down',act:2,eyebrow:'NUMBERS',q:'How much down?',sub:'Watch the HUD — every notch moves your payment.',type:'slider',key:'downPct',min:3,max:40,step:1,def:20,fmt:v=>v+'%',ctx:s=>money(s.answers.price*s.answers.downPct/100)+' DOWN · '+money(s.answers.price*(1-s.answers.downPct/100))+' LOAN'},
+ {id:'incomeAmt',act:2,eyebrow:'NUMBERS',q:'Monthly gross income?',sub:'Household, before taxes. This drives your debt-to-income ratio.',why:'Lenders qualify you on income versus obligations. A ballpark now means your pricing and your first call are grounded in reality — no documents yet.',type:'slider',key:'incomeAmt',min:3000,max:60000,step:500,def:12000,fmt:money},
+ {id:'debts',act:2,eyebrow:'NUMBERS',q:'Monthly debt payments — besides housing?',sub:'Credit-card minimums, car loans, student loans, other mortgages. Ballpark the total.',type:'slider',key:'debts',min:0,max:10000,step:50,def:800,fmt:money,ctx:s=>{const loan=s.answers.price*(1-(s.answers.downPct??20)/100);return 'EST. DTI WITH THIS HOME: '+Math.round((s.answers.debts+pmt(6.5,loan))/s.answers.incomeAmt*100)+'%'}},
  {id:'income',act:3,eyebrow:'PROFILE',q:'How do you earn?',sub:'No documents — this only routes you to the right program.',type:'cards',key:'income',opts:[
    {v:'w2',label:'Salary / W-2',sub:'Standard employment'},
    {v:'self',label:'Self-employed, 2+ yrs',sub:'Tax returns tell the story'},
@@ -335,6 +337,8 @@ refi:[
  {id:'value',act:1,eyebrow:'PROPERTY',q:'What\u2019s your home worth today?',sub:'Your honest estimate — verified later.',type:'slider',key:'value',min:200000,max:3000000,step:25000,def:850000,fmt:money},
  {id:'balance',act:2,eyebrow:'NUMBERS',q:'What do you owe now?',sub:'',type:'slider',key:'balance',min:0,max:2000000,step:10000,def:420000,fmt:money,ctx:s=>'EQUITY '+money(s.answers.value-s.answers.balance)},
  {id:'cash',act:2,eyebrow:'NUMBERS',q:'How much cash out?',sub:'Capped at 80% of value, all-in.',type:'slider',key:'cash',min:20000,max:600000,step:5000,def:100000,fmt:money,when:s=>s.answers.goal==='cash',ctx:s=>{const l=s.answers.balance+s.answers.cash;return 'NEW LOAN '+money(l)+' · '+Math.round(l/s.answers.value*100)+'% LTV'}},
+ {id:'incomeAmt',act:2,eyebrow:'NUMBERS',q:'Monthly gross income?',sub:'Household, before taxes. This drives your debt-to-income ratio.',why:'Lenders qualify you on income versus obligations. A ballpark now means your pricing and your first call are grounded in reality — no documents yet.',type:'slider',key:'incomeAmt',min:3000,max:60000,step:500,def:12000,fmt:money},
+ {id:'debts',act:2,eyebrow:'NUMBERS',q:'Monthly debt payments — besides this home?',sub:'Credit-card minimums, car loans, student loans, other mortgages. Ballpark the total.',type:'slider',key:'debts',min:0,max:10000,step:50,def:800,fmt:money,ctx:s=>{const loan=s.answers.balance+(s.answers.goal==='cash'?(s.answers.cash??0):0);return 'EST. DTI AFTER REFI: '+Math.round((s.answers.debts+pmt(6.5,loan))/s.answers.incomeAmt*100)+'%'}},
  creditStep
 ],
 dscr:[
@@ -642,7 +646,7 @@ function renderResults(){
    <input type="tel" id="gPhone" class="full" placeholder="Mobile" aria-label="Mobile">
   </div>
   <label class="consent"><input type="checkbox" id="tcpa">
-   I agree to receive calls and texts about my inquiry, including via automated technology, at the number provided. Consent isn\u2019t required to obtain a loan. Msg &amp; data rates may apply.</label>
+   By checking this box, I expressly consent to receive calls, texts and emails about my inquiry from LumoLend and its loan officers at the contact info provided \u2014 including via automated technology and prerecorded messages, and even if my number appears on a federal, state or company Do-Not-Call list. Consent isn\u2019t required to obtain a loan. Msg &amp; data rates may apply.</label>
   <button class="cta" style="margin-top:0" onclick="saveRun()">LOCK & START PRE-APPROVAL \u2192</button>
   <div class="saved" id="saved">\u25B8 SCENARIO LOCKED. Spinning up verification\u2026</div>`;
  el.appendChild(gate);

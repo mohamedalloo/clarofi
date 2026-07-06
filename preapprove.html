@@ -111,25 +111,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 .empty .q{margin-bottom:14px}
 .empty .sub{margin:0 auto 30px}
 
-/* ================= LOAN OFFICER UNLOCK ================= */
+/* ================= FILE ROUTED ================= */
 .losec{margin-top:46px}
-.locard{position:relative;max-width:660px;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--cyan-dim);border-radius:12px;padding:30px clamp(22px,4vw,36px);overflow:hidden}
-.locard::before{content:'';position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent 72%,var(--green-ghost) 86%,transparent 100%);animation:spin 9s linear infinite;pointer-events:none}
-@media(prefers-reduced-motion:reduce){.locard::before{animation:none}}
-.locard>*{position:relative}
-.lotop{display:flex;gap:18px;align-items:center;margin-bottom:18px}
-.loav{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#16303c,#0a161d);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:500;color:var(--green);font-size:20px;flex-shrink:0;box-shadow:0 0 24px var(--green-glow);position:relative}
-.loav::after{content:'';position:absolute;bottom:2px;right:2px;width:11px;height:11px;border-radius:50%;background:var(--green);border:2px solid var(--panel);box-shadow:0 0 8px var(--green-glow)}
-.loname{font-family:var(--disp);font-weight:500;font-size:22px}
-.lotitle{font-size:12.5px;color:var(--mut);margin-top:3px}
-.lotitle b{color:var(--cyan);font-weight:500}
-.lostats{display:flex;gap:clamp(14px,4vw,40px);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);padding:14px 0;margin:16px 0;flex-wrap:wrap}
-.lostat .l{font-family:var(--disp);font-size:8.5px;letter-spacing:.2em;color:var(--mut);margin-bottom:3px}
-.lostat .n{font-family:var(--disp);font-size:19px;color:var(--green);text-shadow:0 0 14px var(--green-glow);font-variant-numeric:tabular-nums}
-.lowhy{font-family:var(--disp);font-size:10px;letter-spacing:.24em;color:var(--cyan);margin:14px 0 8px}
-.loreason{display:flex;gap:10px;padding:7px 0;font-size:13px;line-height:1.55;color:var(--txt)}
-.loreason::before{content:'\25B8';color:var(--green);flex-shrink:0}
-.loacts{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;align-items:center}
 .lolocked{max-width:660px;background:var(--panel);border:1px dashed var(--edge);border-radius:12px;padding:26px 30px;display:flex;gap:18px;align-items:center}
 .lolocked .q2{font-family:var(--disp);font-size:17px;margin-bottom:4px}
 .lolocked p{font-size:12.5px;color:var(--mut);line-height:1.55;max-width:44ch}
@@ -262,10 +245,10 @@ function renderApp(){
         </div>
       </div>
       <div class="human">
-        <div class="avatar">?</div>
+        <div class="avatar">&#9993;</div>
         <div>
-          <div class="hn">Loan officer: curated</div>
-          <div class="ht">Matched to this exact deal profile<br><b>&#9679; unlocks at 100% verification</b></div>
+          <div class="hn">Loan officer: assigned</div>
+          <div class="ht">Your intro is in your inbox<br><b>&#9679; verification firms pricing before the first call</b></div>
         </div>
       </div>
     </div>
@@ -353,7 +336,7 @@ function showLetterSection(){
   </div>
   <div id="paperwrap"></div>
   <div class="letteractions">
-    <button class="cta" onclick="unlockLO()" id="unlockBtn">&#128274; UNLOCK MY LOAN OFFICER &rarr;</button>
+    <button class="cta" onclick="routeFile()" id="routeBtn">ROUTE MY VERIFIED FILE &rarr;</button>
     <button class="cta cyan" onclick="window.print()">PRINT / PDF &darr;</button>
   </div>
   <div class="losec" id="losec"></div>`;
@@ -362,7 +345,7 @@ function showLetterSection(){
  const paint=()=>{const p=(sl.value-sl.min)/(sl.max-sl.min)*100;sl.style.setProperty('--fill',p+'%');};
  paint();
  sl.oninput=()=>{power=+sl.value;$('pwv').textContent=money(power);paint();renderPaper();};
- if(file.status!=='preapproved'&&file.status!=='desk'){file.status='preapproved';saveLoanFile(file);}
+ if(file.status!=='preapproved'&&file.status!=='desk'){file.status='preapproved';saveLoanFile(file);try{window.lumoUpdateLead&&lumoUpdateLead(file.id,{status:'preapproved'});}catch(_){}}
  renderPaper();
  setTimeout(()=>sec.scrollIntoView({behavior:reduceMotion?'instant':'smooth',block:'start'}),150);
 }
@@ -391,7 +374,7 @@ function renderPaper(){
   </table>
   <p class="conds">Subject to: satisfactory property appraisal and title; no material change in verified credit, income, or assets; full underwriting review. This letter is not a rate lock or commitment to lend.</p>
   <div class="sig">
-    <div><div class="sname">Alex Delgado</div><div class="stitle">Senior Mortgage Loan Originator<br>NMLS #2732105 · desk@lumolend.com</div></div>
+    <div><div class="sname">LumoLend Lending Desk</div><div class="stitle">Mortgage Loan Origination<br>NMLS #2732105 · desk@lumolend.com</div></div>
     <div class="seal">VERIFIED<br>✓<br>LUMOLEND DESK</div>
   </div>
  </div>`;
@@ -399,38 +382,19 @@ function renderPaper(){
  $('printzone').innerHTML=html;
 }
 
-function toDesk(){
+/* ---------------- route to the desk ---------------- */
+function routeFile(){
  file.status='desk';saveLoanFile(file);
- location.href='desk.html'+encodeFileHash(file);
-}
-
-/* ---------------- loan officer unlock ---------------- */
-function unlockLO(){
- const m=matchLO(file),lo=m.lo,nm=file.first||'';
- file.status='desk';file.lo=m.slug;saveLoanFile(file);
- try{window.lumoUpdateLead&&lumoUpdateLead(file.id,{status:'lo_unlocked',lo_slug:m.slug});}catch(_){}
- const btn=$('unlockBtn');if(btn)btn.style.display='none';
+ try{window.lumoUpdateLead&&lumoUpdateLead(file.id,{status:'routed'});}catch(_){}
+ const btn=$('routeBtn');if(btn)btn.style.display='none';
  const sec=$('losec');
  sec.innerHTML=`
-  <div class="eyebrow">MATCH FOUND — CURATED FOR THIS DEAL</div>
-  <div class="locard step">
-   <div class="lotop">
-    <div class="loav">${lo.initials}</div>
-    <div>
-     <div class="loname">${lo.name}</div>
-     <div class="lotitle"><b>${lo.specialty}</b> · ${lo.years} yrs · NMLS #${lo.nmls}</div>
-    </div>
-   </div>
-   <div class="lostats">
-    <div class="lostat"><div class="l">MEDIAN CLOSE</div><div class="n">${lo.closeDays}d</div></div>
-    <div class="lostat"><div class="l">CLOSE RATE</div><div class="n">${lo.closeRate}%</div></div>
-    <div class="lostat"><div class="l">FUNDED</div><div class="n">${lo.funded}</div></div>
-   </div>
-   <div class="lowhy">WHY ${lo.name.split(' ')[0].toUpperCase()} FOR ${nm?nm.toUpperCase()+"\u2019S":'THIS'} FILE</div>
-   ${m.reasons.map(r=>`<div class="loreason">${r}</div>`).join('')}
-   <div class="loacts">
-    <a class="cta" href="mailto:desk@lumolend.com?subject=${encodeURIComponent('Intro call \u2014 file '+file.id+' ('+(file.first||'')+' '+(file.last||'')+')')}&body=${encodeURIComponent('Hi '+lo.name.split(' ')[0]+' \u2014 my verified file '+file.id+' is ready. Best times for a 12-minute intro:')}">BOOK MY INTRO CALL &rarr;</a>
-    <button class="ghost" onclick="toDesk()">SEE MY FILE ON ${lo.name.split(' ')[0].toUpperCase()}\u2019S DESK &rarr;</button>
+  <div class="eyebrow">FILE ROUTED</div>
+  <div class="lolocked step">
+   <div class="lock-ico" style="border-color:var(--green);color:var(--green)">&#10003;</div>
+   <div>
+    <div class="q2">Your loan officer has the full verified file.</div>
+    <p>Everything you just built — pricing, verifications, the letter — is on their desk. Watch your inbox: your intro landed there when you locked the scenario, and the first call comes next.</p>
    </div>
   </div>`;
  setTimeout(()=>sec.scrollIntoView({behavior:reduceMotion?'instant':'smooth',block:'center'}),120);

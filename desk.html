@@ -250,7 +250,7 @@ function genLenders(f){
 
 function genScript(f){
  const a=f.answers,nm=f.first||'there',s=[];
- s.push(['OPEN','“Hi '+nm+' — Alex from the LumoLend desk. I’ve got your whole run in front of me, so no forms, no re-asking. Twelve minutes and you’ll know the exact path.”']);
+ s.push(['OPEN','“Hi '+nm+' — Mohamed from the LumoLend desk. I’ve got your whole run in front of me, so no forms, no re-asking. Twelve minutes and you’ll know the exact path.”']);
  if(f.flowKey==='home'&&a.vet==='yes')s.push(['LEAD WITH','VA eligibility — zero down, no MI. It priced strongest on their run; confirm entitlement is unused.']);
  else if(f.flowKey==='home'&&a.income==='bank')s.push(['LEAD WITH','“Your deposits qualify you — not your tax returns.” They chose the bank-statement path; validate 12 months of statements are reachable.']);
  else if(f.flowKey==='heloc')s.push(['LEAD WITH','They optimized for '+({days:'speed — confirm the rate premium is understood',weeks:'balance — confirm 2–3 weeks works for their use of funds',slow:'price — confirm nothing forces the timeline'}[a.speed]||'their term choice')+'.']);
@@ -264,7 +264,7 @@ function genScript(f){
 }
 
 /* ---------------- replay labels ---------------- */
-const KEY_LABELS={intent:'Financing',stage:'Buying stage',price:'Price range',downPct:'Down payment',income:'Income type',vet:'Military service',credit:'Credit band',goal:'Refi goal',value:'Property value',balance:'Current balance',cash:'Cash out',pr:'Purchase / refi',rent:'Monthly rent',ltv:'Leverage',rev:'Projected annual gross',actuals:'Hosting history',buy:'Purchase price',rehab:'Rehab budget',arv:'ARV',exp:'Flips completed',amount:'Requested amount',debts:'Monthly debts',speed:'Close speed',appraisal:'Appraisal choice',vesting:'Vesting',citizen:'Citizenship',term:'Structure',prepay:'Early payoff',name:'Name'};
+const KEY_LABELS={intent:'Financing',stage:'Buying stage',price:'Price range',downPct:'Down payment',income:'Income type',incomeAmt:'Monthly income',vet:'Military service',credit:'Credit band',goal:'Refi goal',value:'Property value',balance:'Current balance',cash:'Cash out',pr:'Purchase / refi',rent:'Monthly rent',ltv:'Leverage',rev:'Projected annual gross',actuals:'Hosting history',buy:'Purchase price',rehab:'Rehab budget',arv:'ARV',exp:'Flips completed',amount:'Requested amount',debts:'Monthly debts',speed:'Close speed',appraisal:'Appraisal choice',vesting:'Vesting',citizen:'Citizenship',term:'Structure',prepay:'Early payoff',name:'Name'};
 function fmtAns(k,v){
  if(k==='credit')return CREDIT_LABELS[v]||v;
  if(typeof v==='number')return k==='downPct'||k==='ltv'?v+'%':money(v);
@@ -274,7 +274,7 @@ function fmtAns(k,v){
 /* ---------------- render ---------------- */
 function renderQueue(){
  $('qCount').innerHTML='<b>'+files.length+'</b>';
- $('deskChip').innerHTML='PIPELINE <b>'+files.length+' FILES</b> · ALEX DELGADO';
+ $('deskChip').innerHTML='PIPELINE <b>'+files.length+' FILES</b> · MOHAMED ALLOO';
  $('qList').innerHTML='';
  files.forEach(f=>{
   const b=document.createElement('button');b.className='qitem'+(f.id===sel?' sel':'');
