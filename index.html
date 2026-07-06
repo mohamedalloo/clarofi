@@ -869,40 +869,64 @@ $('lPhone').addEventListener('input',()=>{const el=$('lPhone');el.value=fmtPhone
    autofill. Unit numbers don't exist in address data, so the Unit/Apt
    field stays manual: select the street, then add the unit. */
 const ST_ABBR={'alabama':'AL','alaska':'AK','arizona':'AZ','arkansas':'AR','california':'CA','colorado':'CO','connecticut':'CT','delaware':'DE','florida':'FL','georgia':'GA','hawaii':'HI','idaho':'ID','illinois':'IL','indiana':'IN','iowa':'IA','kansas':'KS','kentucky':'KY','louisiana':'LA','maine':'ME','maryland':'MD','massachusetts':'MA','michigan':'MI','minnesota':'MN','mississippi':'MS','missouri':'MO','montana':'MT','nebraska':'NE','nevada':'NV','new hampshire':'NH','new jersey':'NJ','new mexico':'NM','new york':'NY','north carolina':'NC','north dakota':'ND','ohio':'OH','oklahoma':'OK','oregon':'OR','pennsylvania':'PA','rhode island':'RI','south carolina':'SC','south dakota':'SD','tennessee':'TN','texas':'TX','utah':'UT','vermont':'VT','virginia':'VA','washington':'WA','west virginia':'WV','wisconsin':'WI','wyoming':'WY','district of columbia':'DC'};
-let _adT=null;
+let _adT=null,_adCtl=null;
 function hideSugg(){$('sugg').classList.remove('show');$('sugg').innerHTML='';}
 async function fetchSugg(q){
  try{
-  const r=await fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=6&lang=en');
+  if(_adCtl)_adCtl.abort();
+  _adCtl=new AbortController();
+  const r=await fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=10&lang=en',{signal:_adCtl.signal});
   const j=await r.json();
-  const us=(j.features||[]).filter(f=>{const pr=f.properties;return pr.countrycode==='US'&&pr.housenumber&&pr.street;}).slice(0,5);
-  if(!us.length){hideSugg();return;}
-  const box=$('sugg');box.innerHTML='';
-  us.forEach(f=>{
+  /* OSM rarely has house numbers for residential streets — accept
+     street-level matches and keep the number the borrower typed. */
+  const typedNum=(q.match(/^\s*(\d+[A-Za-z-]*)\s/)||[])[1]||'';
+  const seen=new Set(),out=[];
+  (j.features||[]).forEach(f=>{
    const pr=f.properties;
+   if(pr.countrycode!=='US')return;
+   const isHouse=!!(pr.housenumber&&pr.street),isStreet=pr.type==='street'&&pr.name;
+   if(!isHouse&&!isStreet)return;
+   const streetName=isHouse?pr.street:pr.name;
    const city=pr.city||pr.town||pr.village||pr.district||'';
    const st=ST_ABBR[(pr.state||'').toLowerCase()]||'';
+   const zip=(pr.postcode||'').split(';')[0].split('-')[0];
+   const num=isHouse?pr.housenumber:typedNum;
+   const key=(num+'|'+streetName+'|'+city+'|'+zip).toLowerCase();
+   if(seen.has(key))return;seen.add(key);
+   out.push({num,streetName,city,st,zip,isHouse});
+  });
+  out.sort((a,b)=>(b.isHouse?1:0)-(a.isHouse?1:0));
+  const top=out.slice(0,5);
+  if(!top.length){hideSugg();return;}
+  const box=$('sugg');box.innerHTML='';
+  top.forEach(o=>{
    const b=document.createElement('button');b.type='button';
-   b.textContent=pr.housenumber+' '+pr.street+', '+city+(st?', '+st:'')+(pr.postcode?' '+pr.postcode:'');
+   b.textContent=(o.num?o.num+' ':'')+o.streetName+(o.city?', '+o.city:'')+(o.st?', '+o.st:'')+(o.zip?' '+o.zip:'');
    b.onclick=()=>{
-    $('lStreet').value=pr.housenumber+' '+pr.street;
-    $('lCity').value=city;
-    if(st)$('lState').value=st;
-    if(pr.postcode)$('lZip').value=pr.postcode.split('-')[0];
+    $('lStreet').value=(o.num?o.num+' ':'')+o.streetName;
+    if(o.city)$('lCity').value=o.city;
+    if(o.st)$('lState').value=o.st;
+    if(o.zip)$('lZip').value=o.zip;
     hideSugg();
-    const h=$('addrHint');h.textContent='✓ ADDRESS FILLED — CONDO OR APARTMENT? ADD YOUR UNIT #';h.className='fhint okk';
-    $('lUnit').focus();
+    const h=$('addrHint');
+    if(!o.num){
+     h.textContent='ADD YOUR STREET NUMBER — THEN UNIT / APT IF ANY';h.className='fhint info';
+     const el=$('lStreet');el.focus();el.setSelectionRange(0,0);
+    }else{
+     h.textContent='✓ ADDRESS FILLED — CONDO OR APARTMENT? ADD YOUR UNIT #';h.className='fhint okk';
+     $('lUnit').focus();
+    }
    };
    box.appendChild(b);
   });
   box.classList.add('show');
- }catch(_){hideSugg();}
+ }catch(_){/* aborted or offline — browser autofill still applies */}
 }
 $('lStreet').addEventListener('input',()=>{
  clearTimeout(_adT);
  const q=$('lStreet').value.trim();
  if(q.length<4){hideSugg();return;}
- _adT=setTimeout(()=>fetchSugg(q),260);
+ _adT=setTimeout(()=>fetchSugg(q),350);
 });
 document.addEventListener('click',e=>{if(!e.target.closest('.lwrap'))hideSugg();});
 $('lEmail').addEventListener('blur',()=>{
