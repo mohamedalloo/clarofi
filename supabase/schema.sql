@@ -186,7 +186,7 @@ begin
     coalesce(', ' || new.name, '') || '.</h2>' ||
     '<p>Pricing held exactly where you left it. Pick up any time:</p>' ||
     '<p><a href="https://lumolend.com" style="background:#00E67A;color:#04140B;padding:12px 24px;text-decoration:none;border-radius:4px;font-weight:bold">RESUME MY RUN &rarr;</a></p>' ||
-    '<p style="color:#777;font-size:12px">Indicative ranges, not an offer to lend. LumoLend · NMLS #2732105 · Equal Housing Lender</p></div>',
+    '<p style="color:#777;font-size:12px">Indicative ranges, not an offer or commitment to lend. LumoLend, operated by Honest Casa LLC · NMLS #1566096 · Equal Housing Lender</p></div>',
     'run_saved'
   );
   perform public.send_email(
@@ -259,7 +259,7 @@ begin
     ' &middot; Indicative band <b style="color:#5FE9FF">' || coalesce(new.rate_lo::text,'&mdash;') || '% &ndash; ' || coalesce(new.rate_hi::text,'&mdash;') || '%</b></span></div>' ||
     '<p style="margin:0 0 28px"><a href="https://lumolend.com/preapprove.html" style="background:#00E67A;color:#04140B;padding:13px 26px;text-decoration:none;border-radius:4px;font-weight:bold;font-size:13px">CONTINUE MY REVIEW &rarr;</a></p>' ||
     '<p style="color:#B9C6CC;font-size:14px;line-height:1.7;margin:0 0 26px">Sincerely,<br><b style="color:#E9F4F6">The LumoLend Team</b></p>' ||
-    '<p style="color:#3A4A54;font-size:11px;line-height:1.7;border-top:1px solid #1B2833;padding-top:14px;margin:0">Indicative ranges, not an offer or commitment to lend; subject to full underwriting. LumoLend &middot; NMLS #2732105 &middot; Equal Housing Lender.</p>' ||
+    '<p style="color:#3A4A54;font-size:11px;line-height:1.7;border-top:1px solid #1B2833;padding-top:14px;margin:0">Indicative ranges, not an offer or commitment to lend; subject to full underwriting. LumoLend, operated by Honest Casa LLC &middot; NMLS #1566096 &middot; Equal Housing Lender.</p>' ||
     '</div></div>',
     'lead_locked',
     v_mlo.email

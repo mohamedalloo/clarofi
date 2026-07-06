@@ -17,22 +17,15 @@ A conversational pricing journey (purchase, refi, DSCR, STR, fix & flip, HELOC).
 ### 2. `preapprove.html` — The Scenario Review
 Three one-tap confirmations (identity & contact, property address, scenario snapshot), each with a live terminal-style scan of the borrower's own inputs. The centerpiece: a **review-readiness meter** and a **rate band that visibly narrows** as the file firms up. At 100% the scenario is queued for loan-officer review. No letters are auto-generated — pre-approvals are issued by the loan officer after review.
 
-### 3. `desk.html` — The MLO Command Deck
-The internal view. The borrower's file arrives fully assembled — nothing gets re-asked. For every file the deck generates:
-
-- **Fastest Path to Clear-to-Close** — a day-by-day task sequence, each task owned by AI, MLO, or borrower, tailored to the file (trust vesting → title review day 1; bank statements → deposit analysis first; contract clock → rush appraisal)
-- **Risk Radar** — structural flags computed from the run (tight DTI, thin DSCR coverage, projection haircuts, CLTV ceiling conflicts) each with the fix attached
-- **Lender Routing** — match-scored lender panel with turn times, re-ranked per file
-- **First-Call Talking Beats** — a personalized call script so the MLO's first 12 minutes land
-- **Run Replay** — every borrower answer, verbatim, with verification status
+### 3. The MLO Command Deck (unpublished)
+`desk.html` — the internal per-file view (fastest path to clear-to-close, risk radar, lender routing, call script, run replay) — is currently unpublished while the desk isn't in use. It lives in git history (`git show c5e7f86:desk.html`) and can be restored when needed.
 
 ## Architecture
 
 ```
 lumolend/
 ├── index.html          # Pricer — self-contained (single-file artifact)
-├── preapprove.html     # Pre-approver
-├── desk.html           # MLO command deck
+├── preapprove.html     # Scenario review
 └── assets/
     ├── theme.css       # Shared design tokens & primitives
     └── core.js         # Helpers, LoanFile persistence, pricing firm-up, demo data
@@ -50,11 +43,11 @@ No build, no server. Open `index.html` in a browser. Or:
 npx serve .
 ```
 
-Run a full journey → lock the scenario → complete verifications → generate the letter → route to desk. The desk also seeds three demo files so it's never empty.
+Run a full journey → submit the scenario for review → confirm identity, address and scenario on the review runway.
 
 ## Status / disclaimers
 
-Prototype. Nothing is auto-verified or auto-approved — every scenario is reviewed by a loan officer, and pre-approval letters are issued only after review. Rates are illustrative indicative ranges, not offers or commitments to lend. NMLS #2732105 · Equal Housing Lender.
+Live at [lumolend.com](https://lumolend.com), operated by Honest Casa LLC (NMLS #1566096 · CA DRE #02022356). Nothing is auto-verified or auto-approved — every scenario is reviewed by a loan officer, and pre-approval letters are issued only after review. Rates are illustrative indicative ranges, not offers or commitments to lend. Equal Housing Lender.
 
 ## Roadmap
 

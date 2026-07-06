@@ -119,7 +119,7 @@ input[type=range]:focus-visible::-webkit-slider-thumb{outline:2px solid var(--cy
 
 /* ================= RESULTS ================= */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:14px;margin-top:6px}
-.card{position:relative;background:var(--panel);border:1px solid var(--edge);border-radius:8px;padding:24px 22px;transition:.25s;overflow:hidden}
+.card{position:relative;background:var(--panel);border:1px solid var(--edge);border-radius:8px;padding:24px 22px;transition:.25s;overflow:hidden;cursor:pointer}
 .card:hover{transform:translateY(-3px);border-color:var(--cyan-dim)}
 .card.rec{border-color:var(--green);box-shadow:0 0 30px rgba(0,230,122,.10)}
 .card.rec::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);box-shadow:0 0 12px var(--green-glow)}
@@ -133,6 +133,8 @@ input[type=range]:focus-visible::-webkit-slider-thumb{outline:2px solid var(--cy
 .rows div{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--edge);font-size:12.5px}
 .rows span:first-child{color:var(--mut)}
 .rows span:last-child{font-family:var(--disp);font-variant-numeric:tabular-nums}
+.cardcta{margin-top:14px;font-family:var(--disp);font-size:9.5px;letter-spacing:.16em;color:var(--cyan);opacity:.55;transition:.2s}
+.card:hover .cardcta{opacity:1}
 .verdict{margin:28px 0 8px;padding:18px 22px;background:var(--panel-2);border:1px solid var(--edge);border-left:2px solid var(--cyan);border-radius:0 6px 6px 0;font-size:14.5px;line-height:1.6;color:var(--txt);max-width:660px;box-shadow:inset 0 0 40px rgba(95,233,255,.03)}
 .verdict b{color:var(--cyan);font-family:var(--disp)}
 
@@ -216,6 +218,8 @@ input[type=range]:focus-visible::-webkit-slider-thumb{outline:2px solid var(--cy
 .tmeta b{color:var(--green);font-weight:500}
 
 footer{position:relative;z-index:2;padding:20px clamp(18px,4vw,48px) 30px;font-size:10.5px;color:var(--faint);line-height:1.7;max-width:860px;margin:0 auto}
+footer p{margin-bottom:9px}
+footer a{color:var(--mut)}
 </style>
 </head>
 <body>
@@ -301,7 +305,11 @@ footer{position:relative;z-index:2;padding:20px clamp(18px,4vw,48px) 30px;font-s
 </section>
 
 <footer>
-  LumoLend prototype. Rates are indicative illustrative ranges, not an offer or commitment to lend; subject to full underwriting. NMLS #2732105 · Equal Housing Lender. Primary-residence loans carry additional required disclosures including APR. <span style="float:right"><a href="desk.html" style="color:var(--faint);text-decoration:none;font-family:var(--disp);letter-spacing:.2em">MLO DESK &rarr;</a></span>
+  <p>LumoLend is a mortgage marketplace operated by Honest Casa LLC, connecting borrowers with licensed lenders and loan professionals. We do not directly originate, fund, or service mortgage loans. When you submit a scenario through our platform, your information may be shared with one or more lending partners or licensed loan professionals who can offer you loan products. Loan terms, rates, and availability are determined by the lending partner and are subject to borrower eligibility, property valuation, and market conditions. LumoLend does not guarantee any specific rate, term, or loan approval.</p>
+  <p>All rates shown are for illustrative purposes only and are subject to change without notice. Actual rates are determined by the lending partner based on your creditworthiness, property characteristics, and market conditions. Pre-qualification does not constitute a loan approval or commitment to lend; a formal loan application and underwriting process are required.</p>
+  <p>In accordance with the Real Estate Settlement Procedures Act (RESPA), LumoLend may receive compensation from lending partners when a borrower is matched with a lender through our platform. You are not required to use any lender suggested by LumoLend. You are free to shop for competitive loan terms from any lender of your choosing.</p>
+  <p>LumoLend is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC, 20580.</p>
+  <p>Copyright &copy; 2026 Honest Casa LLC (dba LumoLend). All Rights Reserved. | NMLS #1566096 &middot; CA DRE #02022356 &middot; <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a></p>
 </footer>
 
 <script src="assets/config.js"></script>
@@ -483,14 +491,14 @@ function computeResults(){
   const loan=a.price*(1-a.downPct/100);
   const mk=(name,desc,lo,hi,extra,rec)=>({name,desc,lo:lo+c,hi:hi+c,rows:[['Loan',money(loan)],['Est. P&I / mo',money(pmt(lo+c,loan))+' – '+money(pmt(hi+c,loan))],...extra],rec});
   if(a.income==='bank'||a.income==='asset'){
-   out.cards=[mk(a.income==='bank'?'Bank statement 30-yr':'Asset qualifier 30-yr','Deposits qualify you — not tax returns',5.875,6.5,[['Down required','10%+']],true),
-              mk('Bank statement 40-yr IO','Lower payment, 10-yr interest-only',6.125,6.75,[['Structure','10-yr IO']]),
-              mk('Conventional (if returns work)','Worth testing your filed income',5.125,5.5,[['Down',a.downPct+'%']])];
+   out.cards=[mk(a.income==='bank'?'Bank statement 30-yr':'Asset qualifier 30-yr','Deposits qualify you — not tax returns',5.875,6.75,[['Down required','10%+']],true),
+              mk('Bank statement 40-yr IO','Lower payment, 10-yr interest-only',6.125,7,[['Structure','10-yr IO']]),
+              mk('Conventional (if returns work)','Worth testing your filed income',5.125,5.75,[['Down',a.downPct+'%']])];
    out.verdict='Your profile routes to <b>bank-statement lending</b> — deposits qualify you, not your Schedule C. Slightly higher rate, zero tax returns.';
   }else{
-   out.cards=[mk('Conventional 30-yr','The benchmark',5.125,5.5,[['Down',a.downPct+'%']],a.vet!=='yes'),
-              a.vet==='yes'?mk('VA 30-yr','0% down · no mortgage insurance',4.75,5.125,[['Down required','0%']],true):mk('FHA 30-yr','Easier credit · 3.5% down',4.875,5.25,[['Down required','3.5%'],['Note','MIP applies']]),
-              mk('15-yr fixed','Own it in half the time',4.5,4.875,[['Trade-off','Higher payment']])];
+   out.cards=[mk('Conventional 30-yr','The benchmark',5.125,5.75,[['Down',a.downPct+'%']],a.vet!=='yes'),
+              a.vet==='yes'?mk('VA 30-yr','0% down · no mortgage insurance',4.75,5.375,[['Down required','0%']],true):mk('FHA 30-yr','Easier credit · 3.5% down',4.875,5.5,[['Down required','3.5%'],['Note','MIP applies']]),
+              mk('15-yr fixed','Own it in half the time',4.5,5.125,[['Trade-off','Higher payment']])];
    out.verdict=a.vet==='yes'?'You\u2019re <b>VA eligible</b> — usually the strongest play on the board: zero down, no mortgage insurance.':a.downPct+'% down on '+money(a.price)+' sets your loan at <b>'+money(loan)+'</b>. '+(a.downPct>=20?'No mortgage insurance at this level.':'Under 20% down, budget for mortgage insurance until equity builds.');
   }
  }
@@ -498,9 +506,9 @@ function computeResults(){
  if(state.flowKey==='refi'){
   const cash=a.goal==='cash',loan=cash?a.balance+a.cash:a.balance,ltv=Math.round(loan/a.value*100),adj=cash?0.375:0;
   out.cards=[
-   {name:'30-yr '+(cash?'cash-out':'rate/term'),desc:cash?'Equity out, one clean payment':'Reset onto today\u2019s market',lo:5.25+c+adj,hi:5.625+c+adj,rows:[['New loan',money(loan)],['LTV',ltv+'%'],cash?['Cash to you',money(a.cash)]:['Balance',money(a.balance)],['Est. P&I / mo',money(pmt(5.25+c+adj,loan))+' – '+money(pmt(5.625+c+adj,loan))]],rec:true},
-   {name:'15-yr fixed',desc:'Attack the balance',lo:4.625+c+adj,hi:5+c+adj,rows:[['New loan',money(loan)],['Est. P&I / mo',money(pmt(4.625+c+adj,loan,180))+' – '+money(pmt(5+c+adj,loan,180))]]},
-   {name:'HELOC alternative',desc:cash?'Leave your first mortgage untouched':'Equity access without a refi',lo:7+c*.6,hi:8+c*.6,rows:[['Structure','2nd lien · variable'],['First mortgage','stays put']]}];
+   {name:'30-yr '+(cash?'cash-out':'rate/term'),desc:cash?'Equity out, one clean payment':'Reset onto today\u2019s market',lo:5.25+c+adj,hi:5.875+c+adj,rows:[['New loan',money(loan)],['LTV',ltv+'%'],cash?['Cash to you',money(a.cash)]:['Balance',money(a.balance)],['Est. P&I / mo',money(pmt(5.25+c+adj,loan))+' – '+money(pmt(5.875+c+adj,loan))]],rec:true},
+   {name:'15-yr fixed',desc:'Attack the balance',lo:4.625+c+adj,hi:5.25+c+adj,rows:[['New loan',money(loan)],['Est. P&I / mo',money(pmt(4.625+c+adj,loan,180))+' – '+money(pmt(5.25+c+adj,loan,180))]]},
+   {name:'HELOC alternative',desc:cash?'Leave your first mortgage untouched':'Equity access without a refi',lo:7+c*.6,hi:8.25+c*.6,rows:[['Structure','2nd lien · variable'],['First mortgage','stays put']]}];
   out.verdict=cash?('Pulling <b>'+money(a.cash)+'</b> lands you at <b>'+ltv+'% LTV</b>'+(ltv>80?' — over the 80% cap. Dial the cash back or the value up.':' — inside guidelines with room.')):('At '+money(a.balance)+' on a '+money(a.value)+' home you\u2019re at <b>'+ltv+'% LTV</b> — clean rate/term territory.');
  }
 
@@ -509,7 +517,7 @@ function computeResults(){
   const income=isStr?(a.rev*(a.actuals==='yes'?1:0.8)/12):a.rent;
   const loan=a.value*a.ltv/100,strAdj=isStr?0.25:0,ltvAdj=a.ltv>=75?0.125:(a.ltv<=65?-0.125:0),coAdj=(a.pr==='refi')?0.25:0;
   const base=6.0+c+strAdj+ltvAdj+coAdj;
-  const mkc=(name,desc,d,rec)=>{const lo=base+d,hi=base+0.5+d;const pitia=pmt(lo,loan)+a.value*0.011/12+(isStr?225:150);const dscr=income/pitia;
+  const mkc=(name,desc,d,rec)=>{const lo=base+d,hi=base+0.75+d;const pitia=pmt(lo,loan)+a.value*0.011/12+(isStr?225:150);const dscr=income/pitia;
    return{name,desc,lo,hi,rows:[['Loan',money(loan)],['Est. P&I / mo',money(pmt(lo,loan))+' – '+money(pmt(hi,loan))],['DSCR','~'+dscr.toFixed(2)+'\u00d7']],rec,dscr};};
   out.cards=[mkc('5-yr prepay','Best rate — built to hold',0,true),mkc('3-yr prepay','Balanced flexibility',0.25),mkc('No prepay','Full freedom to exit',0.5)];
   const d=out.cards[0].dscr;
@@ -525,9 +533,9 @@ function computeResults(){
   const io=r=>money(loan*r/100/12);
   const mkb=(name,desc,lo,hi,rows,rec)=>({name,desc,lo:lo+expAdj+c*.5,hi:hi+expAdj+c*.5,rows,rec});
   out.cards=[
-   mkb('12-mo interest-only','The standard flip structure',8.75,9.5,[['Loan (capped)',money(loan)],['Monthly IO',io(8.75+expAdj+c*.5)+' – '+io(9.5+expAdj+c*.5)],['Max LTC',Math.round(ltc*100)+'%']],true),
-   mkb('18-mo interest-only','Room for a slower exit',9,9.75,[['Loan (capped)',money(loan)],['Monthly IO',io(9+expAdj+c*.5)+' – '+io(9.75+expAdj+c*.5)]]),
-   mkb('Bridge-to-DSCR','Auto-refi into a rental loan at exit',8.875,9.625,[['Exit','Built-in DSCR takeout'],['Best for','Holding, not selling']])];
+   mkb('12-mo interest-only','The standard flip structure',8.75,9.75,[['Loan (capped)',money(loan)],['Monthly IO',io(8.75+expAdj+c*.5)+' – '+io(9.75+expAdj+c*.5)],['Max LTC',Math.round(ltc*100)+'%']],true),
+   mkb('18-mo interest-only','Room for a slower exit',9,10,[['Loan (capped)',money(loan)],['Monthly IO',io(9+expAdj+c*.5)+' – '+io(10+expAdj+c*.5)]]),
+   mkb('Bridge-to-DSCR','Auto-refi into a rental loan at exit',8.875,9.875,[['Exit','Built-in DSCR takeout'],['Best for','Holding, not selling']])];
   const m=a.arv-a.buy-a.rehab;
   out.verdict='All-in basis <b>'+money(a.buy+a.rehab)+'</b> vs a <b>'+money(a.arv)+'</b> ARV = <b>'+money(m)+'</b> gross ('+Math.round(m/(a.buy+a.rehab)*100)+'%). '+(m/(a.buy+a.rehab)>=0.2?'Healthy spread.':'Thin once carry and closing costs bite — pressure-test that ARV.');
  }
@@ -541,7 +549,7 @@ function computeResults(){
   const termLabel={line:'flex line',f10:'fixed 10-yr',f15:'fixed 15-yr',f20:'fixed 20\u201330 yr'}[a.term]??'line';
   const pay=r=>months===0?money(line*r/100/12)+' IO':money(pmt(r,line,months));
   const trustNote=a.vesting==='trust'?' +3\u20135d trust review':'';
-  const mk=(name,desc,base,close,appr,fee,rec)=>{const lo=base+c*.7+citAdj+ppAdj,hi=lo+0.875;
+  const mk=(name,desc,base,close,appr,fee,rec)=>{const lo=base+c*.7+citAdj+ppAdj,hi=lo+1.125;
     return{name,desc,lo,hi,rows:[['Amount',money(line)],['Est. / mo',pay(lo)+' \u2013 '+pay(hi)],['Close time',close],['Appraisal',appr],['Early-payoff fee',fee]],rec};};
   const wantFast=a.speed==='days',wantSlow=a.speed==='slow';
   out.cards=[
@@ -679,7 +687,9 @@ function renderResults(){
   const c=document.createElement('div');c.className='card'+(cd.rec?' rec':'');
   c.innerHTML=`${cd.rec?'<span class="tag">OUR PICK</span>':''}<h4>${cd.name}</h4><div class="desc">${cd.desc}</div>
    <div class="rate">${pct(cd.lo)} – ${pct(cd.hi)}<small>INDICATIVE RANGE</small></div>
-   <div class="rows">${cd.rows.map(rr=>`<div><span>${rr[0]}</span><span>${rr[1]}</span></div>`).join('')}</div>`;
+   <div class="rows">${cd.rows.map(rr=>`<div><span>${rr[0]}</span><span>${rr[1]}</span></div>`).join('')}</div>
+   <div class="cardcta">SELECT & SUBMIT FOR REVIEW →</div>`;
+  c.onclick=()=>{state.pickedName=cd.name;openLock();};
   cards.appendChild(c);
  });
  el.appendChild(cards);
@@ -797,7 +807,7 @@ function submitScenario(){
  if(!/^\d{5}(-\d{4})?$/.test(zip))return fieldErr($('lZip'));
  if(!$('tcpa').checked){$('tcpa').focus();return;}
  const e=liveEstimate(),r=computeResults();
- const pick=r.cards.find(c=>c.rec)||r.cards[0];
+ const pick=r.cards.find(c=>c.name===state.pickedName)||r.cards.find(c=>c.rec)||r.cards[0];
  const file={
   id:'LL-'+Date.now().toString(36).toUpperCase().slice(-6),
   created:new Date().toISOString(),

@@ -118,7 +118,11 @@
 </section>
 
 <footer class="legal">
-  LumoLend prototype. Every scenario is reviewed by a licensed loan officer &mdash; nothing is auto-approved, and pre-approval letters are issued only after review. Rates are indicative illustrative ranges, not an offer or commitment to lend. NMLS #2732105 &middot; Equal Housing Lender.
+  <p style="margin-bottom:9px">Every scenario is reviewed by a licensed loan officer &mdash; nothing is auto-approved, and pre-approval letters are issued only after review.</p>
+  <p style="margin-bottom:9px">LumoLend is a mortgage marketplace operated by Honest Casa LLC, connecting borrowers with licensed lenders and loan professionals. We do not directly originate, fund, or service mortgage loans. Loan terms, rates, and availability are determined by the lending partner and are subject to borrower eligibility, property valuation, and market conditions. LumoLend does not guarantee any specific rate, term, or loan approval. All rates shown are for illustrative purposes only and are subject to change without notice.</p>
+  <p style="margin-bottom:9px">In accordance with RESPA, LumoLend may receive compensation from lending partners when a borrower is matched with a lender through our platform. You are not required to use any lender suggested by LumoLend and are free to shop for competitive loan terms from any lender of your choosing.</p>
+  <p style="margin-bottom:9px">LumoLend is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC, 20580.</p>
+  <p style="margin-bottom:0">Copyright &copy; 2026 Honest Casa LLC (dba LumoLend). All Rights Reserved. | NMLS #1566096 &middot; CA DRE #02022356 &middot; <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener" style="color:var(--mut)">NMLS Consumer Access</a></p>
 </footer>
 
 <script src="assets/config.js"></script>
@@ -139,16 +143,9 @@ function renderEmpty(){
    <div class="eyebrow" style="justify-content:center">NO ACTIVE SCENARIO</div>
    <h1 class="q">Nothing to review — yet.</h1>
    <p class="sub">Price a scenario first and submit it. The run lands here for confirmation and loan-officer review.</p>
-   <a class="cta" href="index.html">START A RUN &rarr;</a>&nbsp;&nbsp;
-   <button class="cta cyan" onclick="loadDemo()">LOAD A DEMO FILE</button>
+   <a class="cta" href="index.html">START A RUN &rarr;</a>
  </div>`;
 }
-function loadDemo(){
- file=demoFiles()[0];
- file.id='LL-DEMO00';file.verifications={identity:null,address:null,scenario:null};file.status='submitted';
- saveLoanFile(file);renderApp();
-}
-
 /* ---------------- confirmation specs ---------------- */
 function fmtAddress(f){
  if(!f.address||!f.address.street)return null;
