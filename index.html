@@ -193,6 +193,13 @@ input[type=range]:focus-visible::-webkit-slider-thumb{outline:2px solid var(--cy
 .fhint{grid-column:1/-1;font-family:var(--disp);font-size:10px;letter-spacing:.08em;color:#FF9B9B;margin:-7px 0 0;min-height:13px}
 .fhint b{color:var(--cyan);cursor:pointer;font-weight:500}
 .fhint.okk{color:var(--green)}
+.fhint.info{color:var(--mut)}
+.lwrap{position:relative}
+.sugg{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--panel-2);border:1px solid var(--cyan-dim);border-radius:6px;z-index:5;display:none;overflow:hidden;box-shadow:0 14px 44px rgba(0,0,0,.55)}
+.sugg.show{display:block}
+.sugg button{display:block;width:100%;text-align:left;background:none;border:none;color:var(--txt);font-family:var(--body);font-size:13px;padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--edge)}
+.sugg button:last-child{border-bottom:none}
+.sugg button:hover{background:var(--panel);color:var(--cyan)}
 
 /* ---- sample paper (enticement) ---- */
 .spaper{position:relative;background:#F4F1EA;color:#1A2129;border-radius:6px;padding:20px 22px;margin:16px 0 18px;overflow:hidden}
@@ -278,10 +285,14 @@ footer a{color:var(--mut)}
    <input type="text" id="lFirst" placeholder="Legal first name" autocomplete="given-name" aria-label="Legal first name">
    <input type="text" id="lLast" placeholder="Legal last name" autocomplete="family-name" aria-label="Legal last name">
    <input type="email" id="lEmail" class="lfull" placeholder="Email" autocomplete="email" aria-label="Email">
-   <div class="fhint" id="emailHint"></div>
+   <div class="fhint info" id="emailHint">QUOTE WILL BE SHARED VIA EMAIL</div>
    <input type="tel" id="lPhone" class="lfull" placeholder="Mobile phone" autocomplete="tel-national" inputmode="numeric" aria-label="Mobile phone">
-   <div class="fhint" id="phoneHint"></div>
-   <input type="text" id="lStreet" class="lfull" placeholder="Street address" autocomplete="address-line1" aria-label="Street address">
+   <div class="fhint info" id="phoneHint">REQUIRED FOR VERIFICATION</div>
+   <div class="lwrap lfull">
+    <input type="text" id="lStreet" placeholder="Street address" autocomplete="address-line1" aria-label="Street address">
+    <div class="sugg" id="sugg"></div>
+   </div>
+   <div class="fhint info" id="addrHint">START TYPING &amp; PICK YOUR ADDRESS — ADD UNIT / APT IN THE NEXT FIELD</div>
    <input type="text" id="lUnit" placeholder="Unit / Apt # (condos)" autocomplete="address-line2" aria-label="Unit or apartment">
    <input type="text" id="lCity" placeholder="City" autocomplete="address-level2" aria-label="City">
    <input type="text" id="lState" placeholder="State (CA)" autocomplete="address-level1" maxlength="2" aria-label="State">
@@ -835,10 +846,50 @@ function submitScenario(){
  },900);
 }
 $('lPhone').addEventListener('input',()=>{const el=$('lPhone');el.value=fmtPhone(phoneDigits(el.value));});
+/* address autocomplete — Photon (OSM), no API key, fail-soft to browser
+   autofill. Unit numbers don't exist in address data, so the Unit/Apt
+   field stays manual: select the street, then add the unit. */
+const ST_ABBR={'alabama':'AL','alaska':'AK','arizona':'AZ','arkansas':'AR','california':'CA','colorado':'CO','connecticut':'CT','delaware':'DE','florida':'FL','georgia':'GA','hawaii':'HI','idaho':'ID','illinois':'IL','indiana':'IN','iowa':'IA','kansas':'KS','kentucky':'KY','louisiana':'LA','maine':'ME','maryland':'MD','massachusetts':'MA','michigan':'MI','minnesota':'MN','mississippi':'MS','missouri':'MO','montana':'MT','nebraska':'NE','nevada':'NV','new hampshire':'NH','new jersey':'NJ','new mexico':'NM','new york':'NY','north carolina':'NC','north dakota':'ND','ohio':'OH','oklahoma':'OK','oregon':'OR','pennsylvania':'PA','rhode island':'RI','south carolina':'SC','south dakota':'SD','tennessee':'TN','texas':'TX','utah':'UT','vermont':'VT','virginia':'VA','washington':'WA','west virginia':'WV','wisconsin':'WI','wyoming':'WY','district of columbia':'DC'};
+let _adT=null;
+function hideSugg(){$('sugg').classList.remove('show');$('sugg').innerHTML='';}
+async function fetchSugg(q){
+ try{
+  const r=await fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=6&lang=en');
+  const j=await r.json();
+  const us=(j.features||[]).filter(f=>{const pr=f.properties;return pr.countrycode==='US'&&pr.housenumber&&pr.street;}).slice(0,5);
+  if(!us.length){hideSugg();return;}
+  const box=$('sugg');box.innerHTML='';
+  us.forEach(f=>{
+   const pr=f.properties;
+   const city=pr.city||pr.town||pr.village||pr.district||'';
+   const st=ST_ABBR[(pr.state||'').toLowerCase()]||'';
+   const b=document.createElement('button');b.type='button';
+   b.textContent=pr.housenumber+' '+pr.street+', '+city+(st?', '+st:'')+(pr.postcode?' '+pr.postcode:'');
+   b.onclick=()=>{
+    $('lStreet').value=pr.housenumber+' '+pr.street;
+    $('lCity').value=city;
+    if(st)$('lState').value=st;
+    if(pr.postcode)$('lZip').value=pr.postcode.split('-')[0];
+    hideSugg();
+    const h=$('addrHint');h.textContent='✓ ADDRESS FILLED — CONDO OR APARTMENT? ADD YOUR UNIT #';h.className='fhint okk';
+    $('lUnit').focus();
+   };
+   box.appendChild(b);
+  });
+  box.classList.add('show');
+ }catch(_){hideSugg();}
+}
+$('lStreet').addEventListener('input',()=>{
+ clearTimeout(_adT);
+ const q=$('lStreet').value.trim();
+ if(q.length<4){hideSugg();return;}
+ _adT=setTimeout(()=>fetchSugg(q),260);
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.lwrap'))hideSugg();});
 $('lEmail').addEventListener('blur',()=>{
  const el=$('lEmail'),v=el.value.trim(),h=$('emailHint');if(!v)return;
  const c=checkEmail(v);
- if(c.ok){el.classList.add('ok');el.classList.remove('bad');h.textContent='✓ EMAIL CHECKS OUT';h.className='fhint okk';}
+ if(c.ok){el.classList.add('ok');el.classList.remove('bad');h.textContent='✓ EMAIL CHECKS OUT — YOUR QUOTE LANDS HERE';h.className='fhint okk';}
  else if(c.suggest){h.innerHTML='DID YOU MEAN <b id="emailFix">'+c.suggest+'</b>?';h.className='fhint';
   $('emailFix').onclick=()=>{el.value=c.suggest;h.textContent='';el.classList.remove('bad');};el.classList.add('bad');}
  else{el.classList.add('bad');h.textContent=c.msg;h.className='fhint';}
@@ -846,7 +897,7 @@ $('lEmail').addEventListener('blur',()=>{
 $('lPhone').addEventListener('blur',()=>{
  const el=$('lPhone'),h=$('phoneHint');if(!el.value)return;
  const c=checkPhone(el.value);
- if(c.ok){el.classList.add('ok');el.classList.remove('bad');h.textContent='✓ VALID US MOBILE';h.className='fhint okk';}
+ if(c.ok){el.classList.add('ok');el.classList.remove('bad');h.textContent='✓ VALID — WE VERIFY BY TEXT';h.className='fhint okk';}
  else{el.classList.add('bad');h.textContent=c.msg;h.className='fhint';}
 });
 
