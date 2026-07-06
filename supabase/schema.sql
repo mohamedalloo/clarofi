@@ -73,7 +73,7 @@ alter table public.mlos add column if not exists company text;
 alter table public.mlos add column if not exists highlights jsonb;
 
 insert into public.mlos (slug, name, email, nmls, company, highlights)
-values ('m-alloo', 'Moh Alloo', 'alloo.mohamed@gmail.com', '2732105', 'West Capital Lending', jsonb_build_array(
+values ('m-alloo', 'Moh Alloo', 'malloo@westcapitallending.com', '2732105', 'West Capital Lending', jsonb_build_array(
   'Extensive finance background, including work experience at Amazon and Apple',
   'Top cash-out / lending expert at West Capital Lending',
   'Top 1% on-time closing record',
@@ -187,10 +187,11 @@ begin
     '<p>Pricing held exactly where you left it. Pick up any time:</p>' ||
     '<p><a href="https://lumolend.com" style="background:#00E67A;color:#04140B;padding:12px 24px;text-decoration:none;border-radius:4px;font-weight:bold">RESUME MY RUN &rarr;</a></p>' ||
     '<p style="color:#777;font-size:12px">Indicative ranges, not an offer or commitment to lend. LumoLend, operated by Honest Casa LLC · NMLS #1566096 · Equal Housing Lender</p></div>',
-    'run_saved'
+    'run_saved',
+    'malloo@westcapitallending.com'
   );
   perform public.send_email(
-    'alloo.mohamed@gmail.com',
+    'malloo@westcapitallending.com',
     'New saved run — ' || coalesce(new.name, new.email) || ' (' || coalesce(new.flow,'?') || ')',
     '<div style="font-family:sans-serif"><h3>New saved run</h3><p>' || coalesce(new.name,'(no name)') || ' · ' || new.email ||
     '</p><p>Flow: ' || coalesce(new.flow,'?') || ' · Loan: $' || coalesce(round(new.loan)::text,'?') || '</p></div>',
@@ -265,7 +266,7 @@ begin
     v_mlo.email
   );
   perform public.send_email(
-    coalesce(v_mlo.email, 'alloo.mohamed@gmail.com'),
+    coalesce(v_mlo.email, 'malloo@westcapitallending.com'),
     'LEAD: ' || new.first_name || ' ' || coalesce(new.last_name,'') || ' — ' || coalesce(new.flow,'?') || ' $' || coalesce(round(new.loan)::text,'?'),
     '<div style="font-family:sans-serif"><h3>New locked scenario — routed to you</h3>' ||
     '<p>' || new.first_name || ' ' || coalesce(new.last_name,'') || '<br>' || new.email || ' · ' || coalesce(new.phone,'no phone') || '</p>' ||
