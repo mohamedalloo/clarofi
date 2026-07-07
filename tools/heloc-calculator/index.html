@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HELOC Calculator — How Much Equity Can You Borrow? (2026) | LumoLend Tools</title>
+<meta name="description" content="Free HELOC calculator: home value, mortgage balance and CLTV cap in — your maximum line, interest-only payment, and current equity position out.">
+<link rel="canonical" href="https://lumolend.com/tools/heloc-calculator/">
+<meta name="theme-color" content="#05080C">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LumoLend">
+<meta property="og:title" content="HELOC Calculator — How Much Equity Can You Borrow? (2026)">
+<meta property="og:description" content="Free HELOC calculator: home value, mortgage balance and CLTV cap in — your maximum line, interest-only payment, and current equity position out.">
+<meta property="og:url" content="https://lumolend.com/tools/heloc-calculator/">
+<meta property="og:image" content="https://lumolend.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lumolend.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"HELOC Borrowing Power Calculator","url":"https://lumolend.com/tools/heloc-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Free HELOC calculator: home value, mortgage balance and CLTV cap in \u2014 your maximum line, interest-only payment, and current equity position out.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"LumoLend","legalName":"Honest Casa LLC","url":"https://lumolend.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lumolend.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://lumolend.com/tools/"},{"@type":"ListItem","position":3,"name":"HELOC Calculator","item":"https://lumolend.com/tools/heloc-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much can I borrow on a HELOC?","acceptedAnswer":{"@type":"Answer","text":"Home value times the lender's CLTV cap (typically 80\u201385% on a primary residence), minus your current mortgage balance. Investment properties cap lower, around 70\u201375%."}},{"@type":"Question","name":"Does a HELOC change my existing mortgage?","acceptedAnswer":{"@type":"Answer","text":"No. A HELOC is a second lien \u2014 your first mortgage, its rate, and its payment are untouched. That is the core reason it often beats a cash-out refinance for borrowers holding a low rate."}},{"@type":"Question","name":"Is the payment really interest-only?","acceptedAnswer":{"@type":"Answer","text":"During the draw period, usually yes \u2014 on what you have drawn, not the whole line. When the draw period ends the balance amortizes and the payment steps up meaningfully. Plan around the repayment-phase number."}},{"@type":"Question","name":"AVM or full appraisal for my HELOC?","acceptedAnswer":{"@type":"Answer","text":"AVMs make 5\u20137 day closings possible but value conservatively. If your max line matters more than speed, a full appraisal frequently supports a higher value and a bigger line."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css">
+<link rel="stylesheet" href="/assets/guide.css">
+<link rel="stylesheet" href="/assets/tools.css">
+</head>
+<body>
+<div class="gridworld" aria-hidden="true"><div class="sky-fade"></div><div class="horizon-glow"></div><div class="floor"></div></div>
+<header class="bar">
+  <a class="mark" href="/">
+    <div class="glyph"><i></i><i></i><i></i></div>
+    <div class="wordmark">LUMO<em>LEND</em><span class="mode">/ TOOLS</span></div>
+  </a>
+  <a class="chip" href="/" style="text-decoration:none">PRICE MY SCENARIO <b>&rarr;</b></a>
+</header>
+<main class="gwrap" style="max-width:980px">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">HOME</a> / <a href="/tools/">TOOLS</a> / HELOC CALCULATOR</nav>
+<div class="eyebrow">LUMOLEND TOOLS</div>
+<h1 class="q">HELOC calculator: your real borrowing power.</h1>
+<p class="sub">Home value, current balance, and the lender’s CLTV cap — your maximum line and the interest-only payment on it compute live.</p>
+<div class="calc">
+ <div class="inputs">
+<div class="frow">
+ <div class="flabel"><span>HOME VALUE ($)</span><input class="fval" id="nb_value" type="number" value="900000" min="100000" max="3000000" step="10000" aria-label="HOME VALUE ($)"></div>
+ <input type="range" id="sl_value" min="100000" max="3000000" step="10000" value="900000" aria-label="HOME VALUE ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>MORTGAGE BALANCE ($)</span><input class="fval" id="nb_balance" type="number" value="380000" min="0" max="2000000" step="5000" aria-label="MORTGAGE BALANCE ($)"></div>
+ <input type="range" id="sl_balance" min="0" max="2000000" step="5000" value="380000" aria-label="MORTGAGE BALANCE ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>MAX CLTV (%)</span><input class="fval" id="nb_cltv" type="number" value="85" min="70" max="90" step="5" aria-label="MAX CLTV (%)"></div>
+ <input type="range" id="sl_cltv" min="70" max="90" step="5" value="85" aria-label="MAX CLTV (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>HELOC RATE (%)</span><input class="fval" id="nb_rate" type="number" value="8.5" min="6" max="13" step="0.125" aria-label="HELOC RATE (%)"></div>
+ <input type="range" id="sl_rate" min="6" max="13" step="0.125" value="8.5" aria-label="HELOC RATE (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>PLANNED DRAW ($)</span><input class="fval" id="nb_draw" type="number" value="120000" min="0" max="500000" step="5000" aria-label="PLANNED DRAW ($)"></div>
+ <input type="range" id="sl_draw" min="0" max="500000" step="5000" value="120000" aria-label="PLANNED DRAW ($) slider">
+</div>
+ </div>
+ <div class="results">
+  <div class="bigres" id="bigres"><div class="l"></div><div class="n"></div></div>
+  <div class="resrows" id="resrows"></div>
+  <div class="cverdict" id="cverdict"></div>
+ </div>
+</div>
+<div class="ctapanel"><h3>Line looks right? Price it against a cash-out.</h3><p>These numbers are indicative — a licensed loan officer reviews your exact scenario and firms them against a live lender panel. No documents to start.</p><a class="cta" href="/">RUN MY REAL SCENARIO &rarr;</a></div>
+<article>
+<h2>How this calculator works</h2>
+<p>HELOC sizing is one line of arithmetic: <b>home value &times; the lender's combined-loan-to-value cap, minus everything already owed against the house</b>. Most programs cap CLTV at 80–85% on a primary residence (a few reach 90%); investment properties cap lower, around 70–75%. The payment shown is interest-only on the drawn amount — the standard structure during the draw period.</p>
+<h2>Reading your result</h2>
+<p>The <b>appraisal method matters</b>: fast fintech HELOCs use automated valuations (AVMs) that run conservative — a full appraisal is slower but can unlock a meaningfully bigger line on the same house. And the interest-only figure is the honeymoon number: when the draw period ends, the payment steps up to amortize the balance, so borrow against the repayment-phase payment, not the IO one.</p>
+<p>The real decision is usually HELOC versus cash-out refinance — if your first mortgage carries a low legacy rate, the second lien almost always wins the blended math. Run the logic in <a href="/guides/heloc-vs-cash-out-refi/">HELOC vs cash-out</a>, or <a href="/guides/heloc-on-investment-property/">the rental HELOC guide</a> if the property is an investment.</p>
+<h2>Frequently asked questions</h2><div class="faq"><details><summary>How much can I borrow on a HELOC?</summary><div class="fa">Home value times the lender's CLTV cap (typically 80–85% on a primary residence), minus your current mortgage balance. Investment properties cap lower, around 70–75%.</div></details><details><summary>Does a HELOC change my existing mortgage?</summary><div class="fa">No. A HELOC is a second lien — your first mortgage, its rate, and its payment are untouched. That is the core reason it often beats a cash-out refinance for borrowers holding a low rate.</div></details><details><summary>Is the payment really interest-only?</summary><div class="fa">During the draw period, usually yes — on what you have drawn, not the whole line. When the draw period ends the balance amortizes and the payment steps up meaningfully. Plan around the repayment-phase number.</div></details><details><summary>AVM or full appraisal for my HELOC?</summary><div class="fa">AVMs make 5–7 day closings possible but value conservatively. If your max line matters more than speed, a full appraisal frequently supports a higher value and a bigger line.</div></details></div>
+</article>
+<div class="related"><h2>Go deeper</h2><div class="relgrid"><a href="/guides/heloc-vs-cash-out-refi/">HELOC vs Cash-Out<small>Second lien vs new first — the real math.</small></a><a href="/guides/heloc-on-investment-property/">Rental HELOC<small>Tap rental equity without touching your first lien.</small></a><a href="/guides/heloc-vs-home-equity-loan/">HELOC vs HELOAN<small>Line or lump sum — which fits your plan.</small></a></div></div>
+</main>
+<footer class="legal">
+  <p>Calculator results are estimates for educational purposes only and should not be relied upon as financial advice. All rates and figures are illustrative, subject to change without notice, and not an offer or commitment to lend.</p>
+  <p>LumoLend is a mortgage marketplace operated by Honest Casa LLC, connecting borrowers with licensed lenders and loan professionals. We do not directly originate, fund, or service mortgage loans. Loan terms, rates, and availability are determined by the lending partner and are subject to borrower eligibility, property valuation, and market conditions. LumoLend does not guarantee any specific rate, term, or loan approval.</p>
+  <p>LumoLend is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC, 20580.</p>
+  <p>Copyright &copy; 2026 Honest Casa LLC (dba LumoLend). All Rights Reserved. | NMLS #1566096 &middot; CA DRE #02022356 &middot; <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a></p>
+</footer>
+<script>
+const FIELDS=[{"key": "value", "min": 100000, "max": 3000000, "def": 900000}, {"key": "balance", "min": 0, "max": 2000000, "def": 380000}, {"key": "cltv", "min": 70, "max": 90, "def": 85}, {"key": "rate", "min": 6, "max": 13, "def": 8.5}, {"key": "draw", "min": 0, "max": 500000, "def": 120000}];
+
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const moneyK=n=>n>=1e6?('$'+(n/1e6).toFixed(2).replace(/\.?0+$/,'')+'M'):('$'+Math.round(n/1000)+'K');
+const pct1=n=>(Math.round(n*100)/100).toFixed(2).replace(/\.?0+$/,'')+'%';
+function pmt(rate,principal,months){const r=rate/100/12;if(r===0)return principal/months;return principal*r/(1-Math.pow(1+r,-months));}
+function bindField(f){
+ const sl=$('sl_'+f.key),nb=$('nb_'+f.key);
+ const paint=()=>{const p=(sl.value-f.min)/(f.max-f.min)*100;sl.style.setProperty('--fill',p+'%');};
+ sl.addEventListener('input',()=>{nb.value=sl.value;paint();recalc();});
+ nb.addEventListener('input',()=>{let v=parseFloat(nb.value);if(isNaN(v))return;v=Math.min(f.max,Math.max(f.min,v));sl.value=v;paint();recalc();});
+ nb.addEventListener('blur',()=>{let v=parseFloat(nb.value);if(isNaN(v))v=f.def;v=Math.min(f.max,Math.max(f.min,v));nb.value=v;sl.value=v;paint();recalc();});
+ paint();
+}
+function vals(){const o={};FIELDS.forEach(f=>{o[f.key]=parseFloat($('sl_'+f.key).value);});return o;}
+function render(res){
+ const big=$('bigres');
+ big.querySelector('.l').textContent=res.bigLabel;
+ const n=big.querySelector('.n');n.textContent=res.big;n.className='n'+(res.cls?' '+res.cls:'');
+ $('resrows').innerHTML=res.rows.map(r=>'<div><span>'+r[0]+'</span><span>'+r[1]+'</span></div>').join('');
+ $('cverdict').innerHTML=res.verdict;
+}
+function recalc(){render(compute(vals()));}
+document.addEventListener('DOMContentLoaded',()=>{FIELDS.forEach(bindField);recalc();});
+
+function compute(v){
+ const maxTotal=v.value*v.cltv/100;
+ const line=Math.max(0,maxTotal-v.balance);
+ const draw=Math.min(v.draw,line);
+ const ioPay=draw*v.rate/100/12;
+ const cltvNow=v.value>0?(v.balance/v.value*100):0;
+ const cltvAfter=v.value>0?((v.balance+draw)/v.value*100):0;
+ const cls=line>0?(v.draw>line?'warn':''):'bad';
+ let verdict;
+ if(line<=0)verdict='<b>No room at this cap.</b> Your balance is already at or above '+v.cltv+'% of value. A higher-CLTV program (some go to 90% on primaries), a higher appraised value, or paying the balance down are the levers.';
+ else if(v.draw>line)verdict='<b>Your planned draw exceeds the ceiling.</b> Max line at '+v.cltv+'% CLTV is '+money(line)+'. A full appraisal (vs an AVM) sometimes unlocks more — or check a higher-CLTV program.';
+ else verdict='<b>'+money(draw)+' fits</b> — landing at '+cltvAfter.toFixed(0)+'% combined LTV, first mortgage untouched. Interest-only on the draw runs '+money(ioPay)+'/mo during the draw period; remember the payment rises when repayment starts.';
+ return{bigLabel:'MAX LINE @ '+v.cltv+'% CLTV',big:moneyK(line),cls,
+  rows:[['Current CLTV',cltvNow.toFixed(0)+'%'],['Total debt allowed',money(maxTotal)],
+   ['Planned draw (capped)',money(draw)],['Interest-only pmt on draw',money(ioPay)+'/mo'],
+   ['CLTV after draw',cltvAfter.toFixed(0)+'%']],
+  verdict};
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DTI Calculator — Debt-to-Income Ratio for a Mortgage (2026) | LumoLend Tools</title>
+<meta name="description" content="Free DTI calculator: enter income, debts, and the housing payment to get front-end and back-end ratios plus the maximum payment you can carry at 45%.">
+<link rel="canonical" href="https://lumolend.com/tools/dti-calculator/">
+<meta name="theme-color" content="#05080C">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LumoLend">
+<meta property="og:title" content="DTI Calculator — Debt-to-Income Ratio for a Mortgage (2026)">
+<meta property="og:description" content="Free DTI calculator: enter income, debts, and the housing payment to get front-end and back-end ratios plus the maximum payment you can carry at 45%.">
+<meta property="og:url" content="https://lumolend.com/tools/dti-calculator/">
+<meta property="og:image" content="https://lumolend.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lumolend.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"DTI Calculator","url":"https://lumolend.com/tools/dti-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Free DTI calculator: enter income, debts, and the housing payment to get front-end and back-end ratios plus the maximum payment you can carry at 45%.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"LumoLend","legalName":"Honest Casa LLC","url":"https://lumolend.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lumolend.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://lumolend.com/tools/"},{"@type":"ListItem","position":3,"name":"DTI Calculator","item":"https://lumolend.com/tools/dti-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What DTI do I need to buy a house?","acceptedAnswer":{"@type":"Answer","text":"Under 43% back-end is comfortable on nearly every program, and conventional routinely approves to 45\u201350% with compensating factors like reserves and strong credit."}},{"@type":"Question","name":"Do credit card balances count, or just minimums?","acceptedAnswer":{"@type":"Answer","text":"Only minimum monthly payments count toward DTI. Balances affect credit utilization and score, which affect pricing \u2014 but the ratio itself uses minimums."}},{"@type":"Question","name":"What income counts?","acceptedAnswer":{"@type":"Answer","text":"Gross (pre-tax) income the underwriter can document: base pay, plus bonus/overtime/commission with history, documented rental income, and self-employed income per tax returns or bank-statement analysis."}},{"@type":"Question","name":"What if my DTI is too high?","acceptedAnswer":{"@type":"Answer","text":"Pay off a monthly tradeline, extend the loan term, put more down, document additional income \u2014 or use a product that qualifies differently, like DSCR for investment property."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css">
+<link rel="stylesheet" href="/assets/guide.css">
+<link rel="stylesheet" href="/assets/tools.css">
+</head>
+<body>
+<div class="gridworld" aria-hidden="true"><div class="sky-fade"></div><div class="horizon-glow"></div><div class="floor"></div></div>
+<header class="bar">
+  <a class="mark" href="/">
+    <div class="glyph"><i></i><i></i><i></i></div>
+    <div class="wordmark">LUMO<em>LEND</em><span class="mode">/ TOOLS</span></div>
+  </a>
+  <a class="chip" href="/" style="text-decoration:none">PRICE MY SCENARIO <b>&rarr;</b></a>
+</header>
+<main class="gwrap" style="max-width:980px">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">HOME</a> / <a href="/tools/">TOOLS</a> / DTI CALCULATOR</nav>
+<div class="eyebrow">LUMOLEND TOOLS</div>
+<h1 class="q">DTI calculator: the ratio that approves or kills your file.</h1>
+<p class="sub">Enter gross income, monthly debts, and the target housing payment — your front-end and back-end ratios compute live against real program caps.</p>
+<div class="calc">
+ <div class="inputs">
+<div class="frow">
+ <div class="flabel"><span>GROSS INCOME ($/MO)</span><input class="fval" id="nb_income" type="number" value="10000" min="2000" max="60000" step="250" aria-label="GROSS INCOME ($/MO)"></div>
+ <input type="range" id="sl_income" min="2000" max="60000" step="250" value="10000" aria-label="GROSS INCOME ($/MO) slider">
+</div><div class="frow">
+ <div class="flabel"><span>NEW HOUSING PAYMENT ($/MO)</span><input class="fval" id="nb_housing" type="number" value="2800" min="500" max="15000" step="50" aria-label="NEW HOUSING PAYMENT ($/MO)"></div>
+ <input type="range" id="sl_housing" min="500" max="15000" step="50" value="2800" aria-label="NEW HOUSING PAYMENT ($/MO) slider">
+</div><div class="frow">
+ <div class="flabel"><span>OTHER DEBTS ($/MO)</span><input class="fval" id="nb_debts" type="number" value="650" min="0" max="10000" step="25" aria-label="OTHER DEBTS ($/MO)"></div>
+ <input type="range" id="sl_debts" min="0" max="10000" step="25" value="650" aria-label="OTHER DEBTS ($/MO) slider">
+</div>
+ </div>
+ <div class="results">
+  <div class="bigres" id="bigres"><div class="l"></div><div class="n"></div></div>
+  <div class="resrows" id="resrows"></div>
+  <div class="cverdict" id="cverdict"></div>
+ </div>
+</div>
+<div class="ctapanel"><h3>Ratio works? Turn it into a priced scenario.</h3><p>These numbers are indicative — a licensed loan officer reviews your exact scenario and firms them against a live lender panel. No documents to start.</p><a class="cta" href="/">RUN MY REAL SCENARIO &rarr;</a></div>
+<article>
+<h2>How this calculator works</h2>
+<p>Debt-to-income is the underwriter's core affordability test: <b>total monthly debt payments &divide; gross monthly income</b>. The back-end ratio includes your full future housing payment (PITIA) plus every monthly obligation on your credit report — card minimums, car payments, student loans. The front-end ratio is the housing payment alone.</p>
+<h2>Reading your result</h2>
+<p>Under <b>43%</b> is the classic qualified-mortgage benchmark and the safest zone everywhere. Conventional loans approve to <b>45–50%</b> every day with compensating factors. Above 50%, restructure — the fastest fix is usually paying off (not down) a monthly tradeline, since killing a $450 car payment beats $20,000 of extra down payment on most files.</p>
+<p>What counts and what doesn't, program caps, and the escalation options live in <a href="/guides/dti-explained/">our DTI guide</a>. Self-employed with skinny tax returns? <a href="/guides/bank-statement-loans/">Bank-statement loans</a> qualify on deposits instead.</p>
+<h2>Frequently asked questions</h2><div class="faq"><details><summary>What DTI do I need to buy a house?</summary><div class="fa">Under 43% back-end is comfortable on nearly every program, and conventional routinely approves to 45–50% with compensating factors like reserves and strong credit.</div></details><details><summary>Do credit card balances count, or just minimums?</summary><div class="fa">Only minimum monthly payments count toward DTI. Balances affect credit utilization and score, which affect pricing — but the ratio itself uses minimums.</div></details><details><summary>What income counts?</summary><div class="fa">Gross (pre-tax) income the underwriter can document: base pay, plus bonus/overtime/commission with history, documented rental income, and self-employed income per tax returns or bank-statement analysis.</div></details><details><summary>What if my DTI is too high?</summary><div class="fa">Pay off a monthly tradeline, extend the loan term, put more down, document additional income — or use a product that qualifies differently, like DSCR for investment property.</div></details></div>
+</article>
+<div class="related"><h2>Go deeper</h2><div class="relgrid"><a href="/guides/dti-explained/">DTI Explained<small>The formula, the caps, and how to fix yours.</small></a><a href="/guides/bank-statement-loans/">Bank-Statement Loans<small>Qualify on deposits, not tax returns.</small></a><a href="/guides/preapproval-vs-prequalification/">Pre-Approval vs Pre-Qual<small>What sellers trust, and why amounts matter.</small></a></div></div>
+</main>
+<footer class="legal">
+  <p>Calculator results are estimates for educational purposes only and should not be relied upon as financial advice. All rates and figures are illustrative, subject to change without notice, and not an offer or commitment to lend.</p>
+  <p>LumoLend is a mortgage marketplace operated by Honest Casa LLC, connecting borrowers with licensed lenders and loan professionals. We do not directly originate, fund, or service mortgage loans. Loan terms, rates, and availability are determined by the lending partner and are subject to borrower eligibility, property valuation, and market conditions. LumoLend does not guarantee any specific rate, term, or loan approval.</p>
+  <p>LumoLend is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC, 20580.</p>
+  <p>Copyright &copy; 2026 Honest Casa LLC (dba LumoLend). All Rights Reserved. | NMLS #1566096 &middot; CA DRE #02022356 &middot; <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a></p>
+</footer>
+<script>
+const FIELDS=[{"key": "income", "min": 2000, "max": 60000, "def": 10000}, {"key": "housing", "min": 500, "max": 15000, "def": 2800}, {"key": "debts", "min": 0, "max": 10000, "def": 650}];
+
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const moneyK=n=>n>=1e6?('$'+(n/1e6).toFixed(2).replace(/\.?0+$/,'')+'M'):('$'+Math.round(n/1000)+'K');
+const pct1=n=>(Math.round(n*100)/100).toFixed(2).replace(/\.?0+$/,'')+'%';
+function pmt(rate,principal,months){const r=rate/100/12;if(r===0)return principal/months;return principal*r/(1-Math.pow(1+r,-months));}
+function bindField(f){
+ const sl=$('sl_'+f.key),nb=$('nb_'+f.key);
+ const paint=()=>{const p=(sl.value-f.min)/(f.max-f.min)*100;sl.style.setProperty('--fill',p+'%');};
+ sl.addEventListener('input',()=>{nb.value=sl.value;paint();recalc();});
+ nb.addEventListener('input',()=>{let v=parseFloat(nb.value);if(isNaN(v))return;v=Math.min(f.max,Math.max(f.min,v));sl.value=v;paint();recalc();});
+ nb.addEventListener('blur',()=>{let v=parseFloat(nb.value);if(isNaN(v))v=f.def;v=Math.min(f.max,Math.max(f.min,v));nb.value=v;sl.value=v;paint();recalc();});
+ paint();
+}
+function vals(){const o={};FIELDS.forEach(f=>{o[f.key]=parseFloat($('sl_'+f.key).value);});return o;}
+function render(res){
+ const big=$('bigres');
+ big.querySelector('.l').textContent=res.bigLabel;
+ const n=big.querySelector('.n');n.textContent=res.big;n.className='n'+(res.cls?' '+res.cls:'');
+ $('resrows').innerHTML=res.rows.map(r=>'<div><span>'+r[0]+'</span><span>'+r[1]+'</span></div>').join('');
+ $('cverdict').innerHTML=res.verdict;
+}
+function recalc(){render(compute(vals()));}
+document.addEventListener('DOMContentLoaded',()=>{FIELDS.forEach(bindField);recalc();});
+
+function compute(v){
+ const front=v.housing/v.income*100;
+ const back=(v.housing+v.debts)/v.income*100;
+ const maxHousing45=Math.max(0,v.income*0.45-v.debts);
+ const maxHousing50=Math.max(0,v.income*0.50-v.debts);
+ const cls=back<=43?'':(back<=50?'warn':'bad');
+ let verdict;
+ if(back<=36)verdict='<b>Excellent.</b> Under 36% back-end is comfortable on every program — your ratio won’t be the constraint.';
+ else if(back<=43)verdict='<b>Solid approval territory.</b> Under the classic 43% benchmark; virtually every program works at this ratio.';
+ else if(back<=50)verdict='<b>Tight but doable.</b> Conventional approves to 45–50% with compensating factors (reserves, credit, down payment). Paying off one monthly tradeline may move you a full tier.';
+ else verdict='<b>Over the caps.</b> Most consumer programs stop at 50%. The levers: pay off a monthly debt, extend the term, put more down, document more income — or qualify differently (bank-statement for self-employed; DSCR for rentals, which ignores personal DTI entirely).';
+ return{bigLabel:'BACK-END DTI',big:back.toFixed(1)+'%',cls,
+  rows:[['Front-end (housing only)',front.toFixed(1)+'%'],['Total monthly obligations',money(v.housing+v.debts)],
+   ['Max housing @ 45% back-end',money(maxHousing45)],['Max housing @ 50% back-end',money(maxHousing50)]],
+  verdict};
+}
+</script>
+</body>
+</html>

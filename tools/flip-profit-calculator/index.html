@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix & Flip Calculator — Profit, Carry Costs & ROI (2026) | LumoLend Tools</title>
+<meta name="description" content="Free fix and flip calculator: purchase, rehab, ARV, loan terms and hold time in — true profit after carry, points and selling costs, cash needed, and ROI.">
+<link rel="canonical" href="https://lumolend.com/tools/flip-profit-calculator/">
+<meta name="theme-color" content="#05080C">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LumoLend">
+<meta property="og:title" content="Fix & Flip Calculator — Profit, Carry Costs & ROI (2026)">
+<meta property="og:description" content="Free fix and flip calculator: purchase, rehab, ARV, loan terms and hold time in — true profit after carry, points and selling costs, cash needed, and ROI.">
+<meta property="og:url" content="https://lumolend.com/tools/flip-profit-calculator/">
+<meta property="og:image" content="https://lumolend.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lumolend.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Fix & Flip Profit Calculator","url":"https://lumolend.com/tools/flip-profit-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Free fix and flip calculator: purchase, rehab, ARV, loan terms and hold time in \u2014 true profit after carry, points and selling costs, cash needed, and ROI.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"LumoLend","legalName":"Honest Casa LLC","url":"https://lumolend.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lumolend.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://lumolend.com/tools/"},{"@type":"ListItem","position":3,"name":"Flip Calculator","item":"https://lumolend.com/tools/flip-profit-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What profit margin should a flip have?","acceptedAnswer":{"@type":"Answer","text":"Most experienced operators underwrite to at least 15\u201320% of all-in basis. Below 10%, normal surprises \u2014 appraisal softness, timeline slips, change orders \u2014 routinely turn the deal break-even or negative."}},{"@type":"Question","name":"What does loan-to-cost mean?","acceptedAnswer":{"@type":"Answer","text":"LTC is the loan as a percentage of purchase price plus rehab budget. Caps step with experience: roughly 75% for first-timers to 85% for operators with 4+ exits, always subject to the 70%-of-ARV ceiling."}},{"@type":"Question","name":"Do I pay interest on the rehab budget before drawing it?","acceptedAnswer":{"@type":"Answer","text":"Depends on the lender: \"Dutch\" lenders charge interest on the full commitment from day one, \"non-Dutch\" only on funds as drawn. Non-Dutch saves real carry on heavy rehabs \u2014 ask explicitly."}},{"@type":"Question","name":"What if I can't sell before the loan matures?","acceptedAnswer":{"@type":"Answer","text":"Extensions (fee per month), a bridge-to-DSCR refinance into a rental hold, or a price cut. Plan the fallback before closing \u2014 good lenders underwrite your exit and so should you."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css">
+<link rel="stylesheet" href="/assets/guide.css">
+<link rel="stylesheet" href="/assets/tools.css">
+</head>
+<body>
+<div class="gridworld" aria-hidden="true"><div class="sky-fade"></div><div class="horizon-glow"></div><div class="floor"></div></div>
+<header class="bar">
+  <a class="mark" href="/">
+    <div class="glyph"><i></i><i></i><i></i></div>
+    <div class="wordmark">LUMO<em>LEND</em><span class="mode">/ TOOLS</span></div>
+  </a>
+  <a class="chip" href="/" style="text-decoration:none">PRICE MY SCENARIO <b>&rarr;</b></a>
+</header>
+<main class="gwrap" style="max-width:980px">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">HOME</a> / <a href="/tools/">TOOLS</a> / FLIP CALCULATOR</nav>
+<div class="eyebrow">LUMOLEND TOOLS</div>
+<h1 class="q">Flip calculator: profit after every real cost.</h1>
+<p class="sub">Gross margin is a fantasy number. This computes what actually hits your account — after loan carry, points, and selling costs — and the cash you need to get there.</p>
+<div class="calc">
+ <div class="inputs">
+<div class="frow">
+ <div class="flabel"><span>PURCHASE PRICE ($)</span><input class="fval" id="nb_buy" type="number" value="410000" min="50000" max="2000000" step="5000" aria-label="PURCHASE PRICE ($)"></div>
+ <input type="range" id="sl_buy" min="50000" max="2000000" step="5000" value="410000" aria-label="PURCHASE PRICE ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>REHAB BUDGET ($)</span><input class="fval" id="nb_rehab" type="number" value="95000" min="5000" max="800000" step="2500" aria-label="REHAB BUDGET ($)"></div>
+ <input type="range" id="sl_rehab" min="5000" max="800000" step="2500" value="95000" aria-label="REHAB BUDGET ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>AFTER-REPAIR VALUE ($)</span><input class="fval" id="nb_arv" type="number" value="685000" min="100000" max="3000000" step="5000" aria-label="AFTER-REPAIR VALUE ($)"></div>
+ <input type="range" id="sl_arv" min="100000" max="3000000" step="5000" value="685000" aria-label="AFTER-REPAIR VALUE ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>LOAN-TO-COST (%)</span><input class="fval" id="nb_ltc" type="number" value="85" min="70" max="90" step="2.5" aria-label="LOAN-TO-COST (%)"></div>
+ <input type="range" id="sl_ltc" min="70" max="90" step="2.5" value="85" aria-label="LOAN-TO-COST (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>BRIDGE RATE (%)</span><input class="fval" id="nb_rate" type="number" value="10" min="8" max="14" step="0.125" aria-label="BRIDGE RATE (%)"></div>
+ <input type="range" id="sl_rate" min="8" max="14" step="0.125" value="10" aria-label="BRIDGE RATE (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>POINTS (%)</span><input class="fval" id="nb_points" type="number" value="2" min="0" max="4" step="0.25" aria-label="POINTS (%)"></div>
+ <input type="range" id="sl_points" min="0" max="4" step="0.25" value="2" aria-label="POINTS (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>MONTHS TO SALE</span><input class="fval" id="nb_months" type="number" value="9" min="3" max="24" step="1" aria-label="MONTHS TO SALE"></div>
+ <input type="range" id="sl_months" min="3" max="24" step="1" value="9" aria-label="MONTHS TO SALE slider">
+</div><div class="frow">
+ <div class="flabel"><span>SELLING COSTS (%)</span><input class="fval" id="nb_sellpct" type="number" value="7" min="4" max="10" step="0.5" aria-label="SELLING COSTS (%)"></div>
+ <input type="range" id="sl_sellpct" min="4" max="10" step="0.5" value="7" aria-label="SELLING COSTS (%) slider">
+</div>
+ </div>
+ <div class="results">
+  <div class="bigres" id="bigres"><div class="l"></div><div class="n"></div></div>
+  <div class="resrows" id="resrows"></div>
+  <div class="cverdict" id="cverdict"></div>
+ </div>
+</div>
+<div class="ctapanel"><h3>Margin holds up? Get the bridge priced.</h3><p>These numbers are indicative — a licensed loan officer reviews your exact scenario and firms them against a live lender panel. No documents to start.</p><a class="cta" href="/">RUN MY REAL SCENARIO &rarr;</a></div>
+<article>
+<h2>How this calculator works</h2>
+<p>Every flip pencil starts with the same fantasy: ARV minus purchase minus rehab. This calculator adds the three costs that actually decide whether you make money: <b>loan carry</b> (interest-only on the bridge for every month you hold), <b>points</b> at origination, and <b>selling costs</b> (agent commissions, transfer taxes, concessions — typically 6–8% of the sale).</p>
+<p>The loan sizes the way bridge lenders size it: your loan-to-cost percentage against purchase + rehab, <b>capped at 70% of ARV</b>, whichever is lower. The gap between all-in cost and the loan is your cash to close.</p>
+<h2>Reading your result</h2>
+<p>Experienced operators want <b>15–20%+ margin on basis</b> — not because they're greedy, but because flips find surprises: a slow month costs a full carry payment, a soft comp costs five figures. The ROI figure annualizes badly on long holds; two extra months on the market is often the difference between a good flip and a break-even one.</p>
+<p>LTC tiers by experience, draw mechanics, and exit strategy live in <a href="/guides/fix-and-flip-bridge-loans/">the bridge loan guide</a>; how to comp the ARV honestly is in <a href="/guides/arv-after-repair-value/">ARV explained</a>.</p>
+<h2>Frequently asked questions</h2><div class="faq"><details><summary>What profit margin should a flip have?</summary><div class="fa">Most experienced operators underwrite to at least 15–20% of all-in basis. Below 10%, normal surprises — appraisal softness, timeline slips, change orders — routinely turn the deal break-even or negative.</div></details><details><summary>What does loan-to-cost mean?</summary><div class="fa">LTC is the loan as a percentage of purchase price plus rehab budget. Caps step with experience: roughly 75% for first-timers to 85% for operators with 4+ exits, always subject to the 70%-of-ARV ceiling.</div></details><details><summary>Do I pay interest on the rehab budget before drawing it?</summary><div class="fa">Depends on the lender: "Dutch" lenders charge interest on the full commitment from day one, "non-Dutch" only on funds as drawn. Non-Dutch saves real carry on heavy rehabs — ask explicitly.</div></details><details><summary>What if I can't sell before the loan matures?</summary><div class="fa">Extensions (fee per month), a bridge-to-DSCR refinance into a rental hold, or a price cut. Plan the fallback before closing — good lenders underwrite your exit and so should you.</div></details></div>
+</article>
+<div class="related"><h2>Go deeper</h2><div class="relgrid"><a href="/guides/fix-and-flip-bridge-loans/">Fix & Flip Bridge Loans<small>LTC caps, ARV ceilings, draw schedules.</small></a><a href="/guides/arv-after-repair-value/">ARV Explained<small>How appraisers actually compute it.</small></a><a href="/guides/hard-money-vs-bridge-loans/">Hard Money vs Bridge<small>Which fast money fits which deal.</small></a></div></div>
+</main>
+<footer class="legal">
+  <p>Calculator results are estimates for educational purposes only and should not be relied upon as financial advice. All rates and figures are illustrative, subject to change without notice, and not an offer or commitment to lend.</p>
+  <p>LumoLend is a mortgage marketplace operated by Honest Casa LLC, connecting borrowers with licensed lenders and loan professionals. We do not directly originate, fund, or service mortgage loans. Loan terms, rates, and availability are determined by the lending partner and are subject to borrower eligibility, property valuation, and market conditions. LumoLend does not guarantee any specific rate, term, or loan approval.</p>
+  <p>LumoLend is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC, 20580.</p>
+  <p>Copyright &copy; 2026 Honest Casa LLC (dba LumoLend). All Rights Reserved. | NMLS #1566096 &middot; CA DRE #02022356 &middot; <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a></p>
+</footer>
+<script>
+const FIELDS=[{"key": "buy", "min": 50000, "max": 2000000, "def": 410000}, {"key": "rehab", "min": 5000, "max": 800000, "def": 95000}, {"key": "arv", "min": 100000, "max": 3000000, "def": 685000}, {"key": "ltc", "min": 70, "max": 90, "def": 85}, {"key": "rate", "min": 8, "max": 14, "def": 10}, {"key": "points", "min": 0, "max": 4, "def": 2}, {"key": "months", "min": 3, "max": 24, "def": 9}, {"key": "sellpct", "min": 4, "max": 10, "def": 7}];
+
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const moneyK=n=>n>=1e6?('$'+(n/1e6).toFixed(2).replace(/\.?0+$/,'')+'M'):('$'+Math.round(n/1000)+'K');
+const pct1=n=>(Math.round(n*100)/100).toFixed(2).replace(/\.?0+$/,'')+'%';
+function pmt(rate,principal,months){const r=rate/100/12;if(r===0)return principal/months;return principal*r/(1-Math.pow(1+r,-months));}
+function bindField(f){
+ const sl=$('sl_'+f.key),nb=$('nb_'+f.key);
+ const paint=()=>{const p=(sl.value-f.min)/(f.max-f.min)*100;sl.style.setProperty('--fill',p+'%');};
+ sl.addEventListener('input',()=>{nb.value=sl.value;paint();recalc();});
+ nb.addEventListener('input',()=>{let v=parseFloat(nb.value);if(isNaN(v))return;v=Math.min(f.max,Math.max(f.min,v));sl.value=v;paint();recalc();});
+ nb.addEventListener('blur',()=>{let v=parseFloat(nb.value);if(isNaN(v))v=f.def;v=Math.min(f.max,Math.max(f.min,v));nb.value=v;sl.value=v;paint();recalc();});
+ paint();
+}
+function vals(){const o={};FIELDS.forEach(f=>{o[f.key]=parseFloat($('sl_'+f.key).value);});return o;}
+function render(res){
+ const big=$('bigres');
+ big.querySelector('.l').textContent=res.bigLabel;
+ const n=big.querySelector('.n');n.textContent=res.big;n.className='n'+(res.cls?' '+res.cls:'');
+ $('resrows').innerHTML=res.rows.map(r=>'<div><span>'+r[0]+'</span><span>'+r[1]+'</span></div>').join('');
+ $('cverdict').innerHTML=res.verdict;
+}
+function recalc(){render(compute(vals()));}
+document.addEventListener('DOMContentLoaded',()=>{FIELDS.forEach(bindField);recalc();});
+
+function compute(v){
+ const allIn=v.buy+v.rehab;
+ const loan=Math.min(allIn*v.ltc/100,v.arv*0.70);
+ const cashIn=allIn-loan;
+ const pointsCost=loan*v.points/100;
+ const carry=loan*v.rate/100/12*v.months;
+ const sellCosts=v.arv*v.sellpct/100;
+ const profit=v.arv-allIn-pointsCost-carry-sellCosts;
+ const totalCash=cashIn+pointsCost+carry;
+ const roi=totalCash>0?profit/totalCash*100:0;
+ const margin=profit/allIn*100;
+ const cls=margin>=15?'':(margin>=8?'warn':'bad');
+ let verdict;
+ if(margin>=20)verdict='<b>Healthy spread.</b> '+Math.round(margin)+'% on basis leaves room for the surprises every flip finds. Note the loan is capped by '+(loan<allIn*v.ltc/100?'<b>70% of ARV</b>':'LTC')+' here.';
+ else if(margin>=8)verdict='<b>Thin.</b> '+Math.round(margin)+'% on basis works only if the ARV is bulletproof and the timeline holds — one bad comp or two extra months eats it. Pressure-test the ARV with independent comps.';
+ else verdict='<b>Danger zone.</b> After real carry and selling costs this deal makes '+money(profit)+' — the market is paying you almost nothing for the risk. Renegotiate the buy, tighten the rehab, or pass.';
+ return{bigLabel:'NET PROFIT',big:moneyK(profit),cls,
+  rows:[['Loan (LTC vs 70% ARV cap)',money(loan)],['Cash to close (gap)',money(cashIn)],
+   ['Points cost',money(pointsCost)],['Carry ('+v.months+' mo interest-only)',money(carry)],
+   ['Selling costs @ '+v.sellpct+'%',money(sellCosts)],['ROI on cash',Math.round(roi)+'%']],
+  verdict};
+}
+</script>
+</body>
+</html>

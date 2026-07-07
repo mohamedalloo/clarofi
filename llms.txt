@@ -28,6 +28,10 @@
 - https://lumolend.com/guides/va-loans-zero-down/ — Eligibility, COE, funding fee, entitlement.
 - https://lumolend.com/guides/dti-explained/ — The formula, the caps, and how to fix yours.
 - https://lumolend.com/guides/preapproval-vs-prequalification/ — What sellers trust, and why amounts matter.
+- https://lumolend.com/guides/dscr-vs-conventional-loans/ — Rent-based vs income-based qualifying, compared head to head
+- https://lumolend.com/guides/hard-money-vs-bridge-loans/ — Fast expensive money vs cheaper institutional bridge debt
+- https://lumolend.com/guides/heloc-vs-home-equity-loan/ — Flexible credit line or fixed lump sum, decided
+- https://lumolend.com/guides/no-doc-loans/ — What replaced no-doc loans and who qualifies now
 - https://lumolend.com/guides/itin-mortgage-loans/ — Home loans for ITIN holders, no SSN required
 - https://lumolend.com/guides/asset-depletion-loans/ — Qualify on savings and investments, not income
 - https://lumolend.com/guides/mortgage-for-1099-contractors/ — Mortgage paths for contractors and gig workers
@@ -40,6 +44,15 @@
 - https://lumolend.com/guides/prepayment-penalties-explained/ — What early payoff really costs investors
 - https://lumolend.com/guides/mortgage-rate-locks-explained/ — When to lock and what it costs
 - https://lumolend.com/guides/fha-vs-conventional/ — Which low-down-payment path costs less
+- https://lumolend.com/guides/mortgage-points-explained/ — Break-even math on discount points and lender credits
+- https://lumolend.com/guides/arv-after-repair-value/ — How after-repair value drives every flip decision
+- https://lumolend.com/guides/piti-pitia-explained/ — Every piece of your full monthly mortgage payment
+- https://lumolend.com/guides/seasoning-requirements-explained/ — Every mortgage waiting period, decoded in one guide
+- https://lumolend.com/guides/va-loan-multifamily/ — Zero down on 2-4 units, rent helps qualify
+- https://lumolend.com/guides/non-warrantable-condo-loans/ — Financing condos the big banks won't touch
+- https://lumolend.com/guides/foreign-national-mortgage/ — US mortgages for non-resident buyers, no SSN
+- https://lumolend.com/guides/jumbo-loan-requirements/ — What lenders require above the conforming limit
+- https://lumolend.com/guides/dscr-loans-by-state/ — The 16-state coverage map, compared.
 - https://lumolend.com/guides/dscr-loans-texas/ — Heavy property taxes meet landlord-friendly courts
 - https://lumolend.com/guides/dscr-loans-florida/ — Wind insurance, condo rules, doc stamps, STRs
 - https://lumolend.com/guides/dscr-loans-california/ — High prices, thin ratios — sizing leverage honestly
@@ -48,6 +61,34 @@
 - https://lumolend.com/guides/dscr-loans-north-carolina/ — Charlotte-to-coast coverage math and closing quirks
 - https://lumolend.com/guides/dscr-loans-georgia/ — Atlanta rentals, fast courts, intangibles-tax math
 - https://lumolend.com/guides/dscr-loans-ohio/ — High coverage ratios, county tax traps, loan floors
+- https://lumolend.com/guides/dscr-loans-indiana/ — Indy rent-to-price math and the 2% tax cap
+- https://lumolend.com/guides/dscr-loans-missouri/ — KC state-line math and St. Louis map reading
+- https://lumolend.com/guides/dscr-loans-michigan/ — Uncapping, 18 extra mills, and Detroit appraisals
+- https://lumolend.com/guides/dscr-loans-alabama/ — Lowest taxes in America, priced-in wind risk
+- https://lumolend.com/guides/dscr-loans-colorado/ — Denver leverage math, mountain STR licenses, hail insurance
+- https://lumolend.com/guides/dscr-loans-nevada/ — Vegas STR rules, two-tier tax caps, HOA math
+- https://lumolend.com/guides/dscr-loans-south-carolina/ — The 6% assessment trap, Charleston STRs, wind pool
+- https://lumolend.com/guides/dscr-loans-oklahoma/ — OKC/Tulsa cash flow, loan minimums, tornado insurance
+- https://lumolend.com/guides/brrrr-method-financing/ — Recycle one pot of capital across deals
+- https://lumolend.com/guides/house-hacking-guide/ — Live cheap while tenants pay your mortgage
+- https://lumolend.com/guides/how-many-mortgages-can-you-have/ — The 10-loan limit and how to beat it
+- https://lumolend.com/guides/llc-mortgage-loans/ — Close in your LLC without the workarounds
+
+## Free tools (interactive calculators)
+
+- https://lumolend.com/tools/ — tools hub
+- https://lumolend.com/tools/dscr-calculator/ — DSCR coverage ratio calculator
+- https://lumolend.com/tools/dti-calculator/ — debt-to-income calculator
+- https://lumolend.com/tools/brrrr-calculator/ — BRRRR cash-out recycling calculator
+- https://lumolend.com/tools/flip-profit-calculator/ — fix & flip profit calculator
+- https://lumolend.com/tools/heloc-calculator/ — HELOC borrowing power calculator
+
+## Other resources
+
+- https://lumolend.com/guides/mortgage-glossary/ — 48-term plain-English glossary
+- https://lumolend.com/about/ — about the company and the reviewing loan officer
+- https://lumolend.com/es/prestamos-itin/ — guía de préstamos ITIN en español
+- https://lumolend.com/llms-full.txt — full text of all guides for LLM ingestion
 
 ## Company
 

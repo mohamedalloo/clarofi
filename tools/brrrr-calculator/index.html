@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRRRR Calculator — Cash-Out Refinance & Capital Recycled (2026) | LumoLend Tools</title>
+<meta name="description" content="Free BRRRR calculator: purchase, rehab, ARV and refi LTV in — capital returned, cash left in the deal, equity created, and the new payment out.">
+<link rel="canonical" href="https://lumolend.com/tools/brrrr-calculator/">
+<meta name="theme-color" content="#05080C">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LumoLend">
+<meta property="og:title" content="BRRRR Calculator — Cash-Out Refinance & Capital Recycled (2026)">
+<meta property="og:description" content="Free BRRRR calculator: purchase, rehab, ARV and refi LTV in — capital returned, cash left in the deal, equity created, and the new payment out.">
+<meta property="og:url" content="https://lumolend.com/tools/brrrr-calculator/">
+<meta property="og:image" content="https://lumolend.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lumolend.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"BRRRR Cash-Out Calculator","url":"https://lumolend.com/tools/brrrr-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Free BRRRR calculator: purchase, rehab, ARV and refi LTV in \u2014 capital returned, cash left in the deal, equity created, and the new payment out.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"LumoLend","legalName":"Honest Casa LLC","url":"https://lumolend.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lumolend.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://lumolend.com/tools/"},{"@type":"ListItem","position":3,"name":"BRRRR Calculator","item":"https://lumolend.com/tools/brrrr-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What LTV can I get on a BRRRR refinance?","acceptedAnswer":{"@type":"Answer","text":"Investment cash-out typically caps at 70\u201375% LTV on both conventional and DSCR paths. The best pricing usually sits at 65\u201370%."}},{"@type":"Question","name":"How long before I can refinance at the new value?","acceptedAnswer":{"@type":"Answer","text":"Conventional generally wants 12 months of ownership; many DSCR lenders allow cash-out at appraised value after 6. If you paid cash, delayed financing lets you refi immediately but only up to your purchase price plus costs."}},{"@type":"Question","name":"Is the cash from the refinance taxable?","acceptedAnswer":{"@type":"Answer","text":"No \u2014 loan proceeds are borrowed money, not income. Interest deductibility depends on use of funds; confirm treatment with your CPA."}},{"@type":"Question","name":"What kills BRRRR deals most often?","acceptedAnswer":{"@type":"Answer","text":"Appraisals coming in under the projected ARV, and rents that can't cover the new payment at the target loan size. Comp the ARV honestly and run the DSCR before you buy, not after."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css">
+<link rel="stylesheet" href="/assets/guide.css">
+<link rel="stylesheet" href="/assets/tools.css">
+</head>
+<body>
+<div class="gridworld" aria-hidden="true"><div class="sky-fade"></div><div class="horizon-glow"></div><div class="floor"></div></div>
+<header class="bar">
+  <a class="mark" href="/">
+    <div class="glyph"><i></i><i></i><i></i></div>
+    <div class="wordmark">LUMO<em>LEND</em><span class="mode">/ TOOLS</span></div>
+  </a>
+  <a class="chip" href="/" style="text-decoration:none">PRICE MY SCENARIO <b>&rarr;</b></a>
+</header>
+<main class="gwrap" style="max-width:980px">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">HOME</a> / <a href="/tools/">TOOLS</a> / BRRRR CALCULATOR</nav>
+<div class="eyebrow">LUMOLEND TOOLS</div>
+<h1 class="q">BRRRR calculator: how much capital comes back out?</h1>
+<p class="sub">Buy, rehab, rent, refinance — enter the deal and see exactly how much of your money the refi returns, what stays trapped, and the payment the rent has to carry.</p>
+<div class="calc">
+ <div class="inputs">
+<div class="frow">
+ <div class="flabel"><span>PURCHASE PRICE ($)</span><input class="fval" id="nb_buy" type="number" value="200000" min="30000" max="1500000" step="5000" aria-label="PURCHASE PRICE ($)"></div>
+ <input type="range" id="sl_buy" min="30000" max="1500000" step="5000" value="200000" aria-label="PURCHASE PRICE ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>REHAB BUDGET ($)</span><input class="fval" id="nb_rehab" type="number" value="40000" min="0" max="500000" step="2500" aria-label="REHAB BUDGET ($)"></div>
+ <input type="range" id="sl_rehab" min="0" max="500000" step="2500" value="40000" aria-label="REHAB BUDGET ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>BUY-SIDE COSTS ($)</span><input class="fval" id="nb_closebuy" type="number" value="8000" min="0" max="60000" step="500" aria-label="BUY-SIDE COSTS ($)"></div>
+ <input type="range" id="sl_closebuy" min="0" max="60000" step="500" value="8000" aria-label="BUY-SIDE COSTS ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>AFTER-REPAIR VALUE ($)</span><input class="fval" id="nb_arv" type="number" value="320000" min="50000" max="2000000" step="5000" aria-label="AFTER-REPAIR VALUE ($)"></div>
+ <input type="range" id="sl_arv" min="50000" max="2000000" step="5000" value="320000" aria-label="AFTER-REPAIR VALUE ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>REFI LTV (%)</span><input class="fval" id="nb_ltv" type="number" value="75" min="60" max="80" step="5" aria-label="REFI LTV (%)"></div>
+ <input type="range" id="sl_ltv" min="60" max="80" step="5" value="75" aria-label="REFI LTV (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>REFI RATE (%)</span><input class="fval" id="nb_rate" type="number" value="7.25" min="4" max="12" step="0.125" aria-label="REFI RATE (%)"></div>
+ <input type="range" id="sl_rate" min="4" max="12" step="0.125" value="7.25" aria-label="REFI RATE (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>REFI COSTS ($)</span><input class="fval" id="nb_closerefi" type="number" value="7000" min="0" max="40000" step="500" aria-label="REFI COSTS ($)"></div>
+ <input type="range" id="sl_closerefi" min="0" max="40000" step="500" value="7000" aria-label="REFI COSTS ($) slider">
+</div>
+ </div>
+ <div class="results">
+  <div class="bigres" id="bigres"><div class="l"></div><div class="n"></div></div>
+  <div class="resrows" id="resrows"></div>
+  <div class="cverdict" id="cverdict"></div>
+ </div>
+</div>
+<div class="ctapanel"><h3>Deal recycles? Price the refi leg for real.</h3><p>These numbers are indicative — a licensed loan officer reviews your exact scenario and firms them against a live lender panel. No documents to start.</p><a class="cta" href="/">RUN MY REAL SCENARIO &rarr;</a></div>
+<article>
+<h2>How this calculator works</h2>
+<p>The BRRRR method — buy, rehab, rent, refinance, repeat — lives or dies on the refinance leg. This calculator sizes the new loan at your refi LTV against the after-repair value, subtracts refi costs, and compares the proceeds to every dollar you put in (purchase + rehab + buy-side costs). What's left is either capital returned or capital trapped.</p>
+<h2>Reading your result</h2>
+<p>A <b>full recycle</b> (zero trapped) means infinite return on the capital that came back — the engine that lets one pot of money buy a property every few months. <b>Trapped capital isn't failure</b>, but be honest about it: 15%+ stuck in the deal makes this a leveraged buy-and-hold, and the equity and cash flow have to justify it on their own.</p>
+<p>The two failure points are always the same: the <b>appraisal</b> (see <a href="/guides/arv-after-repair-value/">how ARV is really computed</a>) and the <b>coverage</b> — the new payment must clear the rent test on a <a href="/guides/dscr-loans/">DSCR refi</a>. Seasoning rules and the delayed-financing exception live in <a href="/guides/cash-out-refinance-investment-property/">the cash-out guide</a>.</p>
+<h2>Frequently asked questions</h2><div class="faq"><details><summary>What LTV can I get on a BRRRR refinance?</summary><div class="fa">Investment cash-out typically caps at 70–75% LTV on both conventional and DSCR paths. The best pricing usually sits at 65–70%.</div></details><details><summary>How long before I can refinance at the new value?</summary><div class="fa">Conventional generally wants 12 months of ownership; many DSCR lenders allow cash-out at appraised value after 6. If you paid cash, delayed financing lets you refi immediately but only up to your purchase price plus costs.</div></details><details><summary>Is the cash from the refinance taxable?</summary><div class="fa">No — loan proceeds are borrowed money, not income. Interest deductibility depends on use of funds; confirm treatment with your CPA.</div></details><details><summary>What kills BRRRR deals most often?</summary><div class="fa">Appraisals coming in under the projected ARV, and rents that can't cover the new payment at the target loan size. Comp the ARV honestly and run the DSCR before you buy, not after.</div></details></div>
+</article>
+<div class="related"><h2>Go deeper</h2><div class="relgrid"><a href="/guides/brrrr-method-financing/">BRRRR Financing<small>The full financing lifecycle, leg by leg.</small></a><a href="/guides/cash-out-refinance-investment-property/">Rental Cash-Out<small>Pull equity out of a rental the smart way.</small></a><a href="/guides/arv-after-repair-value/">ARV Explained<small>How appraisers actually compute it.</small></a></div></div>
+</main>
+<footer class="legal">
+  <p>Calculator results are estimates for educational purposes only and should not be relied upon as financial advice. All rates and figures are illustrative, subject to change without notice, and not an offer or commitment to lend.</p>
+  <p>LumoLend is a mortgage marketplace operated by Honest Casa LLC, connecting borrowers with licensed lenders and loan professionals. We do not directly originate, fund, or service mortgage loans. Loan terms, rates, and availability are determined by the lending partner and are subject to borrower eligibility, property valuation, and market conditions. LumoLend does not guarantee any specific rate, term, or loan approval.</p>
+  <p>LumoLend is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC, 20580.</p>
+  <p>Copyright &copy; 2026 Honest Casa LLC (dba LumoLend). All Rights Reserved. | NMLS #1566096 &middot; CA DRE #02022356 &middot; <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a></p>
+</footer>
+<script>
+const FIELDS=[{"key": "buy", "min": 30000, "max": 1500000, "def": 200000}, {"key": "rehab", "min": 0, "max": 500000, "def": 40000}, {"key": "closebuy", "min": 0, "max": 60000, "def": 8000}, {"key": "arv", "min": 50000, "max": 2000000, "def": 320000}, {"key": "ltv", "min": 60, "max": 80, "def": 75}, {"key": "rate", "min": 4, "max": 12, "def": 7.25}, {"key": "closerefi", "min": 0, "max": 40000, "def": 7000}];
+
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const moneyK=n=>n>=1e6?('$'+(n/1e6).toFixed(2).replace(/\.?0+$/,'')+'M'):('$'+Math.round(n/1000)+'K');
+const pct1=n=>(Math.round(n*100)/100).toFixed(2).replace(/\.?0+$/,'')+'%';
+function pmt(rate,principal,months){const r=rate/100/12;if(r===0)return principal/months;return principal*r/(1-Math.pow(1+r,-months));}
+function bindField(f){
+ const sl=$('sl_'+f.key),nb=$('nb_'+f.key);
+ const paint=()=>{const p=(sl.value-f.min)/(f.max-f.min)*100;sl.style.setProperty('--fill',p+'%');};
+ sl.addEventListener('input',()=>{nb.value=sl.value;paint();recalc();});
+ nb.addEventListener('input',()=>{let v=parseFloat(nb.value);if(isNaN(v))return;v=Math.min(f.max,Math.max(f.min,v));sl.value=v;paint();recalc();});
+ nb.addEventListener('blur',()=>{let v=parseFloat(nb.value);if(isNaN(v))v=f.def;v=Math.min(f.max,Math.max(f.min,v));nb.value=v;sl.value=v;paint();recalc();});
+ paint();
+}
+function vals(){const o={};FIELDS.forEach(f=>{o[f.key]=parseFloat($('sl_'+f.key).value);});return o;}
+function render(res){
+ const big=$('bigres');
+ big.querySelector('.l').textContent=res.bigLabel;
+ const n=big.querySelector('.n');n.textContent=res.big;n.className='n'+(res.cls?' '+res.cls:'');
+ $('resrows').innerHTML=res.rows.map(r=>'<div><span>'+r[0]+'</span><span>'+r[1]+'</span></div>').join('');
+ $('cverdict').innerHTML=res.verdict;
+}
+function recalc(){render(compute(vals()));}
+document.addEventListener('DOMContentLoaded',()=>{FIELDS.forEach(bindField);recalc();});
+
+function compute(v){
+ const capitalIn=v.buy+v.rehab+v.closebuy;
+ const newLoan=v.arv*v.ltv/100;
+ const netProceeds=newLoan-v.closerefi;
+ const trapped=capitalIn-netProceeds;
+ const equity=v.arv-newLoan;
+ const pi=pmt(v.rate,newLoan,360);
+ const cls=trapped<=0?'':(trapped<=capitalIn*0.15?'warn':'bad');
+ let verdict;
+ if(trapped<=0)verdict='<b>Full capital recycle'+(trapped<0?' plus '+money(-trapped)+' tax-free proceeds':'')+'.</b> Every dollar comes back out — the textbook BRRRR. Now confirm the rent covers the '+money(pi)+' P&I with room (run the DSCR calculator).';
+ else if(trapped<=capitalIn*0.15)verdict='<b>Near-complete recycle.</b> '+money(trapped)+' stays in the deal ('+Math.round(trapped/capitalIn*100)+'% of capital). Acceptable if the cash flow and equity justify it — or push ARV/LTV honestly to close the gap.';
+ else verdict='<b>'+money(trapped)+' stays trapped</b> ('+Math.round(trapped/capitalIn*100)+'% of your capital). That’s a down payment wearing a BRRRR costume — the deal needs a better basis, a real ARV story, or acceptance that this is a buy-and-hold with extra steps.';
+ return{bigLabel:'CAPITAL RETURNED AT REFI',big:moneyK(Math.max(0,netProceeds)),cls,
+  rows:[['Total capital in',money(capitalIn)],['New loan @ '+v.ltv+'% LTV',money(newLoan)],
+   ['Cash left in deal',money(Math.max(0,trapped))],['Equity after refi',money(equity)],['New P&I / mo',money(pi)]],
+  verdict};
+}
+</script>
+</body>
+</html>

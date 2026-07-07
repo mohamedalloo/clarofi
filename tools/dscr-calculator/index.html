@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSCR Calculator — Rental Coverage Ratio & Max Loan (2026) | LumoLend Tools</title>
+<meta name="description" content="Free DSCR calculator: enter price, rent, rate, taxes and insurance to get your coverage ratio, full PITIA, and the rent you need to hit 1.0 and 1.25.">
+<link rel="canonical" href="https://lumolend.com/tools/dscr-calculator/">
+<meta name="theme-color" content="#05080C">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LumoLend">
+<meta property="og:title" content="DSCR Calculator — Rental Coverage Ratio & Max Loan (2026)">
+<meta property="og:description" content="Free DSCR calculator: enter price, rent, rate, taxes and insurance to get your coverage ratio, full PITIA, and the rent you need to hit 1.0 and 1.25.">
+<meta property="og:url" content="https://lumolend.com/tools/dscr-calculator/">
+<meta property="og:image" content="https://lumolend.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lumolend.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"DSCR Calculator","url":"https://lumolend.com/tools/dscr-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Free DSCR calculator: enter price, rent, rate, taxes and insurance to get your coverage ratio, full PITIA, and the rent you need to hit 1.0 and 1.25.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"LumoLend","legalName":"Honest Casa LLC","url":"https://lumolend.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lumolend.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://lumolend.com/tools/"},{"@type":"ListItem","position":3,"name":"DSCR Calculator","item":"https://lumolend.com/tools/dscr-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What DSCR do lenders require?","acceptedAnswer":{"@type":"Answer","text":"Most programs want at least 1.0\u00d7, with the best pricing tiers starting around 1.2\u20131.25\u00d7. Sub-1.0 programs exist at lower leverage and wider pricing."}},{"@type":"Question","name":"Does this calculator use my income?","acceptedAnswer":{"@type":"Answer","text":"No \u2014 that is the point of DSCR lending. The property qualifies on its own rent versus its own payment; your personal income and DTI never enter the math."}},{"@type":"Question","name":"What counts as PITIA?","acceptedAnswer":{"@type":"Answer","text":"Principal, interest, property taxes, insurance, and association dues. On short-term rentals some lenders also model utilities and management \u2014 see our Airbnb loan guide."}},{"@type":"Question","name":"How do I improve a weak DSCR?","acceptedAnswer":{"@type":"Answer","text":"More down payment (smaller loan, smaller payment), a better rate tier, an interest-only structure, cheaper taxes/insurance, or more rent. Each 5% of extra down payment typically adds several points of coverage."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css">
+<link rel="stylesheet" href="/assets/guide.css">
+<link rel="stylesheet" href="/assets/tools.css">
+</head>
+<body>
+<div class="gridworld" aria-hidden="true"><div class="sky-fade"></div><div class="horizon-glow"></div><div class="floor"></div></div>
+<header class="bar">
+  <a class="mark" href="/">
+    <div class="glyph"><i></i><i></i><i></i></div>
+    <div class="wordmark">LUMO<em>LEND</em><span class="mode">/ TOOLS</span></div>
+  </a>
+  <a class="chip" href="/" style="text-decoration:none">PRICE MY SCENARIO <b>&rarr;</b></a>
+</header>
+<main class="gwrap" style="max-width:980px">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">HOME</a> / <a href="/tools/">TOOLS</a> / DSCR CALCULATOR</nav>
+<div class="eyebrow">LUMOLEND TOOLS</div>
+<h1 class="q">DSCR calculator: does the rent carry the loan?</h1>
+<p class="sub">Enter the deal — the coverage ratio, full PITIA payment, and the rent targets lenders actually price on compute live.</p>
+<div class="calc">
+ <div class="inputs">
+<div class="frow">
+ <div class="flabel"><span>PROPERTY PRICE ($)</span><input class="fval" id="nb_price" type="number" value="485000" min="50000" max="3000000" step="5000" aria-label="PROPERTY PRICE ($)"></div>
+ <input type="range" id="sl_price" min="50000" max="3000000" step="5000" value="485000" aria-label="PROPERTY PRICE ($) slider">
+</div><div class="frow">
+ <div class="flabel"><span>DOWN PAYMENT (%)</span><input class="fval" id="nb_down" type="number" value="25" min="10" max="50" step="1" aria-label="DOWN PAYMENT (%)"></div>
+ <input type="range" id="sl_down" min="10" max="50" step="1" value="25" aria-label="DOWN PAYMENT (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>INTEREST RATE (%)</span><input class="fval" id="nb_rate" type="number" value="7" min="4" max="12" step="0.125" aria-label="INTEREST RATE (%)"></div>
+ <input type="range" id="sl_rate" min="4" max="12" step="0.125" value="7" aria-label="INTEREST RATE (%) slider">
+</div><div class="frow">
+ <div class="flabel"><span>PROPERTY TAXES ($/YR)</span><input class="fval" id="nb_taxes" type="number" value="5800" min="0" max="40000" step="100" aria-label="PROPERTY TAXES ($/YR)"></div>
+ <input type="range" id="sl_taxes" min="0" max="40000" step="100" value="5800" aria-label="PROPERTY TAXES ($/YR) slider">
+</div><div class="frow">
+ <div class="flabel"><span>INSURANCE ($/YR)</span><input class="fval" id="nb_ins" type="number" value="1800" min="0" max="20000" step="100" aria-label="INSURANCE ($/YR)"></div>
+ <input type="range" id="sl_ins" min="0" max="20000" step="100" value="1800" aria-label="INSURANCE ($/YR) slider">
+</div><div class="frow">
+ <div class="flabel"><span>HOA DUES ($/MO)</span><input class="fval" id="nb_hoa" type="number" value="0" min="0" max="1500" step="10" aria-label="HOA DUES ($/MO)"></div>
+ <input type="range" id="sl_hoa" min="0" max="1500" step="10" value="0" aria-label="HOA DUES ($/MO) slider">
+</div><div class="frow">
+ <div class="flabel"><span>MONTHLY RENT ($)</span><input class="fval" id="nb_rent" type="number" value="3350" min="500" max="20000" step="25" aria-label="MONTHLY RENT ($)"></div>
+ <input type="range" id="sl_rent" min="500" max="20000" step="25" value="3350" aria-label="MONTHLY RENT ($) slider">
+</div>
+ </div>
+ <div class="results">
+  <div class="bigres" id="bigres"><div class="l"></div><div class="n"></div></div>
+  <div class="resrows" id="resrows"></div>
+  <div class="cverdict" id="cverdict"></div>
+ </div>
+</div>
+<div class="ctapanel"><h3>Coverage looks good? Price the real loan.</h3><p>These numbers are indicative — a licensed loan officer reviews your exact scenario and firms them against a live lender panel. No documents to start.</p><a class="cta" href="/">RUN MY REAL SCENARIO &rarr;</a></div>
+<article>
+<h2>How this calculator works</h2>
+<p>DSCR (debt service coverage ratio) is the single number that decides a rental property loan: <b>monthly rent &divide; full monthly payment (PITIA)</b> — principal, interest, taxes, insurance, and association dues. The lender never looks at your W-2s or tax returns; the property qualifies itself. This calculator builds the full PITIA from your inputs and divides the rent into it, exactly the way an underwriter does.</p>
+<h2>Reading your result</h2>
+<p><b>1.25&times; and up</b> is a strong file that most lenders compete for. <b>1.0–1.25&times;</b> qualifies broadly at slightly tighter pricing. <b>Below 1.0&times;</b> means the rent doesn't cover the payment — sub-1.0 programs exist, but leverage caps near 70% and the panel narrows. The two rent targets shown are the thresholds worth engineering toward: more down payment, a lower rate tier, or an interest-only structure all move the ratio.</p>
+<p>Full mechanics, prepayment-penalty trade-offs, and LLC vesting live in our <a href="/guides/dscr-loans/">DSCR loan guide</a> — and if you're shopping by state, taxes and insurance change this math dramatically (compare <a href="/guides/dscr-loans-texas/">Texas</a> against <a href="/guides/dscr-loans-arizona/">Arizona</a>).</p>
+<h2>Frequently asked questions</h2><div class="faq"><details><summary>What DSCR do lenders require?</summary><div class="fa">Most programs want at least 1.0×, with the best pricing tiers starting around 1.2–1.25×. Sub-1.0 programs exist at lower leverage and wider pricing.</div></details><details><summary>Does this calculator use my income?</summary><div class="fa">No — that is the point of DSCR lending. The property qualifies on its own rent versus its own payment; your personal income and DTI never enter the math.</div></details><details><summary>What counts as PITIA?</summary><div class="fa">Principal, interest, property taxes, insurance, and association dues. On short-term rentals some lenders also model utilities and management — see our Airbnb loan guide.</div></details><details><summary>How do I improve a weak DSCR?</summary><div class="fa">More down payment (smaller loan, smaller payment), a better rate tier, an interest-only structure, cheaper taxes/insurance, or more rent. Each 5% of extra down payment typically adds several points of coverage.</div></details></div>
+</article>
+<div class="related"><h2>Go deeper</h2><div class="relgrid"><a href="/guides/dscr-loans/">DSCR Loans<small>Coverage math, requirements, prepay trade-offs.</small></a><a href="/guides/airbnb-str-loans/">Airbnb / STR Loans<small>Actuals vs projections, the 20% haircut.</small></a><a href="/guides/investment-property-down-payment/">Down Payment Rules<small>What you really put down, path by path.</small></a></div></div>
+</main>
+<footer class="legal">
+  <p>Calculator results are estimates for educational purposes only and should not be relied upon as financial advice. All rates and figures are illustrative, subject to change without notice, and not an offer or commitment to lend.</p>
+  <p>LumoLend is a mortgage marketplace operated by Honest Casa LLC, connecting borrowers with licensed lenders and loan professionals. We do not directly originate, fund, or service mortgage loans. Loan terms, rates, and availability are determined by the lending partner and are subject to borrower eligibility, property valuation, and market conditions. LumoLend does not guarantee any specific rate, term, or loan approval.</p>
+  <p>LumoLend is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC, 20580.</p>
+  <p>Copyright &copy; 2026 Honest Casa LLC (dba LumoLend). All Rights Reserved. | NMLS #1566096 &middot; CA DRE #02022356 &middot; <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a></p>
+</footer>
+<script>
+const FIELDS=[{"key": "price", "min": 50000, "max": 3000000, "def": 485000}, {"key": "down", "min": 10, "max": 50, "def": 25}, {"key": "rate", "min": 4, "max": 12, "def": 7}, {"key": "taxes", "min": 0, "max": 40000, "def": 5800}, {"key": "ins", "min": 0, "max": 20000, "def": 1800}, {"key": "hoa", "min": 0, "max": 1500, "def": 0}, {"key": "rent", "min": 500, "max": 20000, "def": 3350}];
+
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const moneyK=n=>n>=1e6?('$'+(n/1e6).toFixed(2).replace(/\.?0+$/,'')+'M'):('$'+Math.round(n/1000)+'K');
+const pct1=n=>(Math.round(n*100)/100).toFixed(2).replace(/\.?0+$/,'')+'%';
+function pmt(rate,principal,months){const r=rate/100/12;if(r===0)return principal/months;return principal*r/(1-Math.pow(1+r,-months));}
+function bindField(f){
+ const sl=$('sl_'+f.key),nb=$('nb_'+f.key);
+ const paint=()=>{const p=(sl.value-f.min)/(f.max-f.min)*100;sl.style.setProperty('--fill',p+'%');};
+ sl.addEventListener('input',()=>{nb.value=sl.value;paint();recalc();});
+ nb.addEventListener('input',()=>{let v=parseFloat(nb.value);if(isNaN(v))return;v=Math.min(f.max,Math.max(f.min,v));sl.value=v;paint();recalc();});
+ nb.addEventListener('blur',()=>{let v=parseFloat(nb.value);if(isNaN(v))v=f.def;v=Math.min(f.max,Math.max(f.min,v));nb.value=v;sl.value=v;paint();recalc();});
+ paint();
+}
+function vals(){const o={};FIELDS.forEach(f=>{o[f.key]=parseFloat($('sl_'+f.key).value);});return o;}
+function render(res){
+ const big=$('bigres');
+ big.querySelector('.l').textContent=res.bigLabel;
+ const n=big.querySelector('.n');n.textContent=res.big;n.className='n'+(res.cls?' '+res.cls:'');
+ $('resrows').innerHTML=res.rows.map(r=>'<div><span>'+r[0]+'</span><span>'+r[1]+'</span></div>').join('');
+ $('cverdict').innerHTML=res.verdict;
+}
+function recalc(){render(compute(vals()));}
+document.addEventListener('DOMContentLoaded',()=>{FIELDS.forEach(bindField);recalc();});
+
+function compute(v){
+ const loan=v.price*(1-v.down/100);
+ const pi=pmt(v.rate,loan,360);
+ const pitia=pi+v.taxes/12+v.ins/12+v.hoa;
+ const dscr=v.rent/pitia;
+ const cls=dscr>=1.2?'':(dscr>=1.0?'warn':'bad');
+ let verdict;
+ if(dscr>=1.25)verdict='<b>Strong file.</b> Coverage at or above 1.25&times; typically unlocks a lender’s best DSCR pricing tiers at this leverage.';
+ else if(dscr>=1.0)verdict='<b>It qualifies, tighter pricing.</b> Most programs clear at 1.0&times;; dropping leverage a notch (more down) usually lifts both the ratio and the rate tier.';
+ else if(dscr>=0.75)verdict='<b>Sub-1.0 territory.</b> Programs exist but expect leverage capped near 70% and wider pricing — or restructure: more down, interest-only, or a stronger-rent property.';
+ else verdict='<b>The rent can’t carry this debt.</b> This deal needs materially more down payment or materially more rent before any DSCR lender prices it.';
+ return{bigLabel:'DSCR (RENT ÷ PITIA)',big:dscr.toFixed(2)+'×',cls,
+  rows:[['Loan amount',money(loan)],['P&I / mo',money(pi)],['Full PITIA / mo',money(pitia)],
+   ['Rent needed for 1.00×',money(pitia)],['Rent needed for 1.25×',money(pitia*1.25)]],
+  verdict};
+}
+</script>
+</body>
+</html>
