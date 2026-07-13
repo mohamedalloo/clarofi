@@ -53,6 +53,7 @@
 - https://lumolend.com/guides/foreign-national-mortgage/ — US mortgages for non-resident buyers, no SSN
 - https://lumolend.com/guides/jumbo-loan-requirements/ — What lenders require above the conforming limit
 - https://lumolend.com/guides/dscr-loans-by-state/ — The 16-state coverage map, compared.
+- https://lumolend.com/guides/dscr-loans-by-city/ — Median-deal DSCR ranked across 65 U.S. metros, with price, rent, tax, and PITIA per city.
 - https://lumolend.com/guides/dscr-loans-texas/ — Heavy property taxes meet landlord-friendly courts
 - https://lumolend.com/guides/dscr-loans-florida/ — Wind insurance, condo rules, doc stamps, STRs
 - https://lumolend.com/guides/dscr-loans-california/ — High prices, thin ratios — sizing leverage honestly
@@ -83,11 +84,21 @@
 - https://lumolend.com/tools/flip-profit-calculator/ — fix & flip profit calculator
 - https://lumolend.com/tools/heloc-calculator/ — HELOC borrowing power calculator
 
+## Data
+
+- https://lumolend.com/rate-index/ — LumoLend Non-QM Rate Index: monthly median indicative rates by loan type (DSCR, STR, bridge, HELOC, purchase, refinance), aggregated from real pricing runs; buckets under 5 runs suppressed; CC BY 4.0, citable.
+
+## Guías en español
+
+- https://lumolend.com/es/prestamos-itin/ — hipoteca con ITIN, guía completa
+- https://lumolend.com/es/prestamos-dscr/ — préstamos DSCR: la renta califica el préstamo
+- https://lumolend.com/es/prestamos-con-estados-de-cuenta/ — califique con sus depósitos, no con sus impuestos
+- https://lumolend.com/es/hipoteca-1099/ — hipotecas para contratistas independientes 1099
+
 ## Other resources
 
 - https://lumolend.com/guides/mortgage-glossary/ — 48-term plain-English glossary
 - https://lumolend.com/about/ — about the company and the reviewing loan officer
-- https://lumolend.com/es/prestamos-itin/ — guía de préstamos ITIN en español
 - https://lumolend.com/llms-full.txt — full text of all guides for LLM ingestion
 
 ## Company

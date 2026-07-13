@@ -2981,3 +2981,424 @@ URL: https://lumolend.com/guides/va-loans-zero-down/
 
 **Q: Can surviving spouses use VA benefits?**
  Unremarried surviving spouses of service members who died in the line of duty or from a service-connected disability are generally eligible, including the funding-fee exemption.
+
+---
+
+# DSCR Loans by City (2026): Coverage Ratios in 65 U.S. Metros
+
+URL: https://lumolend.com/guides/dscr-loans-by-city/
+
+## How to read this table
+
+Every row is the median deal in that metro: median price, average rent, the metro’s effective property-tax rate, and a full PITIA built at 20% down, 30-year term, a 7.44% indicative DSCR rate, and insurance at 0.5% of price per year. The last column is the coverage ratio an underwriter would see on that file. Green means the median deal covers itself at 1.0× or better; everything else needs more down payment, a better rate tier, an interest-only structure, or a better-than-median deal. Full mechanics live in the DSCR loan guide, and you can rerun any row with your own numbers in the free DSCR calculator.
+
+## The 65-metro table, ranked by coverage
+
+ | # | Metro | State | Median price | Avg rent | Prop. tax | Est. PITIA | DSCR
+
+ | 1 | Detroit | MI | $100,000 | $1,100 | 1.94% | $759 | 1.45×
+
+ | 2 | Birmingham | AL | $170,000 | $1,360 | 0.66% | $1,110 | 1.23×
+
+ | 3 | Cleveland | OH | $150,000 | $1,375 | 2.18% | $1,169 | 1.18×
+
+ | 4 | Toledo | OH | $128,000 | $1,140 | 2.12% | $991 | 1.15×
+
+ | 5 | Memphis | TN | $178,000 | $1,390 | 1.24% | $1,248 | 1.11×
+
+ | 6 | Little Rock | AR | $182,000 | $1,290 | 0.62% | $1,182 | 1.09×
+
+ | 7 | New Orleans | LA | $245,000 | $1,680 | 0.8% | $1,628 | 1.03×
+
+ | 8 | Pittsburgh | PA | $225,000 | $1,635 | 1.79% | $1,681 | 0.97×
+
+ | 9 | Oklahoma City | OK | $225,000 | $1,440 | 0.99% | $1,531 | 0.94×
+
+ | 10 | St. Louis | MO | $200,000 | $1,335 | 1.38% | $1,426 | 0.94×
+
+ | 11 | Indianapolis | IN | $255,000 | $1,575 | 0.84% | $1,703 | 0.92×
+
+ | 12 | Louisville | KY | $235,000 | $1,370 | 0.9% | $1,581 | 0.87×
+
+ | 13 | Cincinnati | OH | $242,000 | $1,525 | 1.68% | $1,785 | 0.85×
+
+ | 14 | Miami | FL | $475,000 | $2,670 | 0.95% | $3,215 | 0.83×
+
+ | 15 | Tulsa | OK | $220,000 | $1,250 | 1.05% | $1,508 | 0.83×
+
+ | 16 | Corpus Christi | TX | $225,000 | $1,400 | 1.95% | $1,711 | 0.82×
+
+ | 17 | Kansas City | MO | $262,000 | $1,510 | 1.3% | $1,850 | 0.82×
+
+ | 18 | Philadelphia | PA | $345,000 | $1,870 | 0.96% | $2,338 | 0.80×
+
+ | 19 | Greensboro | NC | $265,000 | $1,420 | 0.95% | $1,794 | 0.79×
+
+ | 20 | Tampa | FL | $410,000 | $2,150 | 0.89% | $2,755 | 0.78×
+
+ | 21 | Wichita | KS | $205,000 | $1,120 | 1.3% | $1,447 | 0.77×
+
+ | 22 | Orlando | FL | $375,000 | $1,890 | 0.9% | $2,523 | 0.75×
+
+ | 23 | Fort Worth | TX | $310,000 | $1,770 | 2.05% | $2,383 | 0.74×
+
+ | 24 | Baltimore | MD | $370,000 | $1,870 | 1.1% | $2,551 | 0.73×
+
+ | 25 | Bakersfield | CA | $395,000 | $1,930 | 1.0% | $2,690 | 0.72×
+
+ | 26 | Minneapolis | MN | $335,000 | $1,660 | 1.25% | $2,351 | 0.71×
+
+ | 27 | Jacksonville | FL | $355,000 | $1,680 | 0.9% | $2,388 | 0.70×
+
+ | 28 | St. Paul | MN | $295,000 | $1,460 | 1.3% | $2,083 | 0.70×
+
+ | 29 | Atlanta | GA | $380,000 | $1,810 | 1.0% | $2,588 | 0.70×
+
+ | 30 | Virginia Beach | VA | $425,000 | $2,010 | 0.95% | $2,877 | 0.70×
+
+ | 31 | Stockton | CA | $430,000 | $1,980 | 0.9% | $2,893 | 0.68×
+
+ | 32 | Houston | TX | $305,000 | $1,610 | 2.1% | $2,357 | 0.68×
+
+ | 33 | Phoenix | AZ | $460,000 | $2,020 | 0.56% | $2,964 | 0.68×
+
+ | 34 | Las Vegas | NV | $395,000 | $1,730 | 0.55% | $2,542 | 0.68×
+
+ | 35 | Lexington | KY | $335,000 | $1,520 | 0.95% | $2,268 | 0.67×
+
+ | 36 | Charlotte | NC | $390,000 | $1,730 | 0.8% | $2,591 | 0.67×
+
+ | 37 | Tucson | AZ | $335,000 | $1,500 | 0.9% | $2,254 | 0.67×
+
+ | 38 | Colorado Springs | CO | $445,000 | $1,880 | 0.5% | $2,845 | 0.66×
+
+ | 39 | Nashville | TN | $425,000 | $1,780 | 0.65% | $2,771 | 0.64×
+
+ | 40 | San Antonio | TX | $280,000 | $1,390 | 2.1% | $2,164 | 0.64×
+
+ | 41 | Fresno | CA | $390,000 | $1,650 | 0.78% | $2,585 | 0.64×
+
+ | 42 | Durham | NC | $400,000 | $1,730 | 1.0% | $2,724 | 0.64×
+
+ | 43 | Columbus | OH | $325,000 | $1,510 | 1.75% | $2,417 | 0.62×
+
+ | 44 | Arlington | TX | $315,000 | $1,500 | 2.05% | $2,421 | 0.62×
+
+ | 45 | Lincoln | NE | $295,000 | $1,340 | 1.75% | $2,194 | 0.61×
+
+ | 46 | Omaha | NE | $285,000 | $1,300 | 1.9% | $2,155 | 0.60×
+
+ | 47 | Dallas | TX | $370,000 | $1,650 | 1.8% | $2,767 | 0.60×
+
+ | 48 | Mesa | AZ | $435,000 | $1,650 | 0.56% | $2,803 | 0.59×
+
+ | 49 | Aurora | CO | $465,000 | $1,750 | 0.55% | $2,993 | 0.58×
+
+ | 50 | Raleigh | NC | $430,000 | $1,660 | 0.75% | $2,839 | 0.58×
+
+ | 51 | Henderson | NV | $485,000 | $1,810 | 0.55% | $3,121 | 0.58×
+
+ | 52 | Sacramento | CA | $580,000 | $2,230 | 0.8% | $3,854 | 0.58×
+
+ | 53 | Newark | NJ | $485,000 | $2,140 | 2.2% | $3,788 | 0.56×
+
+ | 54 | Honolulu | HI | $760,000 | $2,640 | 0.3% | $4,733 | 0.56×
+
+ | 55 | Riverside | CA | $650,000 | $2,360 | 1.0% | $4,427 | 0.53×
+
+ | 56 | Oakland | CA | $720,000 | $2,540 | 0.88% | $4,832 | 0.53×
+
+ | 57 | Denver | CO | $560,000 | $1,860 | 0.52% | $3,590 | 0.52×
+
+ | 58 | Austin | TX | $542,000 | $2,010 | 1.63% | $3,976 | 0.51×
+
+ | 59 | Santa Ana | CA | $865,000 | $2,850 | 0.7% | $5,675 | 0.50×
+
+ | 60 | Portland | OR | $535,000 | $1,780 | 1.1% | $3,688 | 0.48×
+
+ | 61 | San Diego | CA | $950,000 | $2,890 | 0.72% | $6,249 | 0.46×
+
+ | 62 | Anaheim | CA | $950,000 | $2,690 | 0.7% | $6,233 | 0.43×
+
+ | 63 | Seattle | WA | $760,000 | $2,190 | 0.87% | $5,094 | 0.43×
+
+ | 64 | Long Beach | CA | $865,000 | $2,310 | 0.75% | $5,711 | 0.40×
+
+ | 65 | Irvine | CA | $1,565,000 | $3,300 | 0.8% | $10,398 | 0.32×
+
+Market data: MaximizeRentalIncome (June 2026), metro-level estimates from public market data; each metro links to its full MRI market profile. DSCR computed by LumoLend at the stated assumptions. Illustrative only — verify before underwriting.
+
+## What the ranking actually says
+
+The pattern is brutal and consistent: coverage lives where price-to-rent is low, not where headlines are. Detroit (1.45×), Birmingham (1.23×), Cleveland (1.18×), Toledo (1.15×), Memphis (1.11×) top the board, while the California coast occupies the entire bottom decile — an identical 20%-down file that underwrites at 1.4× in Detroit prices out below 0.4× in Irvine. That doesn’t make coastal metros untouchable; it makes them appreciation plays that need structure: bigger down payments, interest-only periods, or sub-1.0 programs at lower leverage.
+
+Two caveats before you pick a city off this list. First, the median hides the deal: duplexes, below-market acquisitions, and rehabbed properties routinely beat the metro line — the BRRRR playbook exists precisely to manufacture coverage. Second, taxes shown are effective rates today; several states reassess at sale (Michigan’s uncapping, Texas’s purchase-price reassessment), so model your bill, not the seller’s — the state-by-state guide covers every trap.
+
+## Frequently asked questions
+
+**Which cities have the highest DSCR ratios?**
+
+On median-deal math: Detroit, Cleveland, Toledo, Memphis, Pittsburgh — Rust Belt and central metros where prices stayed anchored to rents. See the full ranked table above.
+
+**Why do most big metros fail 1.0×?**
+
+Prices grew faster than rents. At a ~7.44% rate and 20% down, the median home’s PITIA outruns its median rent in most major metros. More down payment, IO structures, or below-median buys fix it.
+
+**What assumptions does the table use?**
+
+20% down, 30-year term, 7.44% indicative rate (10Y Treasury + ~3-point spread), 0.5%/yr insurance, metro effective property tax. Data: MaximizeRentalIncome, June 2026. Illustrative, not a quote.
+
+**Can I still get a DSCR loan in a sub-1.0× city?**
+
+Yes — the table shows the median deal, not yours. Sub-1.0 programs exist at lower leverage, and a specific property with better rent-to-price clears coverage in any metro.
+
+
+---
+
+# LumoLend Non-QM Rate Index — Monthly Indicative Rates by Loan Type (2026)
+
+URL: https://lumolend.com/rate-index/
+
+## Methodology
+
+Each time a borrower prices a scenario on LumoLend, the pricing engine produces an indicative rate for that exact file — loan type, leverage, credit band, and structure. The index aggregates those runs by calendar month and loan type and reports the median, the 25th–75th percentile band, and the median loan amount. Three rules keep it honest:
+
+1. Minimum sample. A month × loan-type bucket only publishes at 5 or more runs — below that the bucket is suppressed entirely, for both privacy and statistical hygiene.
+2. Indicative, not locked. These are marketplace quotes before underwriting, not locked rates. They are a directional benchmark for what real scenarios were quoted, which is precisely what teaser-rate ads never show.
+3. Aggregate only. No individual run, borrower, or property is ever published — the database exposes nothing below the monthly aggregate.
+
+## Citing the index
+
+The index is free to cite under CC BY 4.0. Reference it as “LumoLend Non-QM Rate Index (lumolend.com/rate-index)” with the month, and note that figures are median indicative quotes. Journalists and researchers: for cuts of the data not shown here, email desk@lumolend.com.
+
+Reviewed by Moh Alloo, Mortgage Loan Originator · NMLS #2732105 · About LumoLend
+
+
+---
+
+# Préstamos DSCR: financie propiedades de renta sin W-2 ni declaraciones
+
+URL: https://lumolend.com/es/prestamos-dscr/
+
+## ¿Qué es un préstamo DSCR?
+
+DSCR son las siglas de Debt Service Coverage Ratio — la razón de cobertura de deuda. Es un préstamo para propiedades de inversión donde la propiedad califica por sí sola, con el flujo de renta que genera. El prestamista nunca le pide W-2, talones de pago, declaraciones de impuestos ni verificación de empleo. La pregunta es una sola: ¿la renta alcanza para cubrir el pago mensual completo?
+Eso convierte al DSCR en la herramienta de financiamiento preferida de los trabajadores por cuenta propia, los dueños de negocio, los inversionistas que van construyendo un portafolio, y cualquier persona cuyas declaraciones de impuestos — llenas de deducciones legítimas — no reflejan lo que realmente gana.
+## La fórmula: renta ÷ PITIA
+
+DSCR = renta mensual ÷ pago mensual PITIA. PITIA es el pago completo: Principal, Interés, Taxes (impuestos de propiedad), Insurance (seguro) y Association (cuota de HOA, si aplica).
+1.25× o más: cobertura fuerte; los mejores niveles de precio.
+1.0–1.25×: califica con la mayoría de los prestamistas, con precio un poco más ajustado.
+Menos de 1.0×: existen programas sub-1.0, pero el financiamiento suele toparse cerca del 70% del valor y hay menos prestamistas compitiendo.
+## Ejemplo con números: propiedad de $465,000 con 30% de enganche
+
+Supongamos que encontró una propiedad de renta de $465,000 y planea un enganche del 30% ($139,500), es decir, un préstamo de $325,500 al 70% del valor:
+Principal e interés: aproximadamente $1,950 al mes
+Impuestos y seguro: unos $425 al mes
+HOA: $0 (casa unifamiliar sin asociación)
+PITIA total: ~$2,375 al mes
+Si la renta de mercado es de $3,350, la cobertura es 3,350 ÷ 2,375 ≈ 1.41× — un expediente fuerte por el que varios prestamistas van a competir. Puede correr sus propios números en segundos con nuestra calculadora DSCR.
+¿Y la renta cómo se comprueba? Con el contrato de arrendamiento vigente, o — si la propiedad está vacía o la va a comprar sin inquilino — con la renta de mercado que determina el valuador en su reporte de rentas (el formulario 1007). No necesita tener inquilino para cerrar.
+## Por qué no piden W-2 ni declaraciones — y para quién es oro
+
+Los préstamos DSCR son préstamos con propósito de negocio: el prestamista evalúa la inversión, no a usted como empleado. Por eso el expediente no lleva comprobantes de ingresos personales. Para la comunidad que trabaja por su cuenta — contratistas, dueños de restaurantes, troqueros, comerciantes — esto elimina el problema clásico: deducir gastos honestamente en los impuestos y luego "no ganar suficiente" en papel para calificar.
+Y hay un punto que pocos conocen: los inversionistas con ITIN también califican. Existen programas DSCR que aceptan ITIN en lugar de Seguro Social, típicamente con un enganche del 25-30% y una prima de tasa. Si usted declara impuestos con ITIN y quiere comprar para rentar, esta es una de las pocas puertas abiertas — y en nuestra guía de préstamos ITIN explicamos el resto del panorama.
+## Requisitos típicos en 2026
+
+ | Factor | Rango típico
+ | Puntaje de crédito | Mínimo 640 en la mayoría de los programas; con 700+ el precio mejora bastante
+ | Financiamiento máximo | 75-80% del valor en compra; en refinanciamiento con retiro de efectivo, unos 5 puntos menos
+ | Reservas | De 3 a 6 meses de pagos PITIA en el banco después de cerrar
+ | Comprobación de renta | Contrato de arrendamiento vigente, o renta de mercado del valuador (formulario 1007)
+ | Tipos de propiedad | Residencial de 1 a 4 unidades; muchos prestamistas también aceptan condominios y multifamiliares pequeños
+## La penalidad por prepago: el intercambio que hay que entender
+
+El precio de un DSCR se cotiza junto con una estructura de penalidad por prepago, normalmente escalonada (por ejemplo, 5-4-3-2-1% del saldo según el año en que liquide). Entre más años acepte, mejor la tasa:
+Prepago de 5 años: la tasa más baja — hecho para comprar y mantener.
+Prepago de 3 años: el punto medio si cree que va a refinanciar a mitad del camino.
+Sin prepago: libertad total de salida, típicamente ~0.5% más de tasa.
+Elija la estructura según su plan de salida, no según la tasa más baja del anuncio. Liquidar en el año dos un préstamo con prepago de 5 años puede borrar el ahorro de tasa varias veces.
+## ¿Cobertura débil? Así se arregla
+
+Si sus números salen cerca o por debajo de 1.0, tiene palancas antes de rendirse:
+Aumente el enganche un escalón. Bajar el financiamiento del 80% al 75%, o del 75% al 70%, reduce el pago y muchas veces empuja la cobertura arriba de 1.0 — y de paso mejora el precio.
+Acepte un prepago más largo. La tasa baja, el PITIA baja, la cobertura sube.
+Revise la renta de mercado. Si la renta actual está por debajo del mercado, el reporte del valuador puede reconocer la renta de mercado, no la del contrato viejo.
+Compare impuestos y seguro. Una cotización de seguro más competitiva baja el PITIA directamente.
+Como último recurso, los programas sub-1.0. Existen, pero con financiamiento topado cerca del 70%, costo adicional y menos opciones. Casi siempre conviene más mover una de las palancas anteriores.
+## Comprar bajo una LLC
+
+La mayoría de los prestamistas DSCR cierran sin problema a nombre de una LLC — muchos hasta lo prefieren, porque son préstamos de negocio. Prepare el operating agreement y la carta del EIN del IRS, y espere firmar una garantía personal: la LLC es la dueña, pero usted responde por el préstamo. Cerrar bajo una LLC no cambia el cálculo de cobertura ni el precio en la mayoría de los programas, y le da la separación patrimonial que muchos inversionistas buscan.
+## Qué mueve su tasa
+
+Cuatro palancas dominan el precio de un DSCR: su banda de crédito, el porcentaje financiado (cada escalón de 5% menos suele comprar un mejor nivel), la estructura de prepago y el propósito (los refinanciamientos con retiro de efectivo cuestan más que las compras). La cobertura pesa en los márgenes: un expediente de 1.4× tiene más prestamistas compitiendo que uno de 1.05×. Si prefiere el detalle técnico completo, también tenemos la guía completa en inglés.
+
+## Preguntas frecuentes
+
+**¿Los préstamos DSCR piden comprobantes de ingresos?**
+
+No. El préstamo califica con la renta de la propiedad comparada contra su pago completo (PITIA). El prestamista no pide W-2, talones de pago, declaraciones de impuestos ni verificación de empleo — ese es precisamente el punto del producto.
+
+**¿Qué puntaje de crédito necesito para un préstamo DSCR?**
+
+La mayoría de los programas empiezan en 640, pero el precio mejora de manera notable en 680, 700 y 740 o más. Un puntaje más alto también puede abrirle acceso a un enganche menor.
+
+**¿Puedo obtener un préstamo DSCR si tengo ITIN y no tengo Seguro Social?**
+
+Sí. Existen programas DSCR para inversionistas con ITIN. Espere un enganche mayor — típicamente del 25-30% — y una prima de tasa, pero la lógica es la misma: la propiedad califica con su renta, no con sus ingresos personales. Es una de las pocas rutas de inversión inmobiliaria abiertas sin SSN.
+
+**¿Puedo cerrar un préstamo DSCR a nombre de una LLC?**
+
+Generalmente sí, y muchos inversionistas lo prefieren porque son préstamos con propósito de negocio. Prepare el acta constitutiva u operating agreement y la carta del EIN, y espere firmar una garantía personal. Cerrar bajo una LLC no cambia el cálculo de cobertura.
+
+**¿Qué pasa si mi cobertura queda por debajo de 1.0?**
+
+Todavía hay opciones: varios prestamistas manejan programas sub-1.0 o sin ratio. Espere el financiamiento limitado a cerca del 70% del valor, un costo adicional en la tasa y menos prestamistas compitiendo. Muchas veces, aumentar el enganche un escalón sube la cobertura arriba de 1.0 y le abre muchas más opciones.
+
+
+---
+
+# Préstamos con estados de cuenta bancarios: guía 2026 para independientes
+
+URL: https://lumolend.com/es/prestamos-con-estados-de-cuenta/
+
+## La paradoja del que deduce bien
+
+Usted conoce esta historia porque probablemente la vive. Un contratista factura $250,000 al año. Deduce la troca, las herramientas, el material, la gasolina, la parte de la casa que usa como oficina — todo legal, todo bien hecho, tal como le aconseja su contador. Resultado: su declaración de impuestos muestra $60,000 de ingreso neto. Pagó menos impuestos, que era la meta.
+Hasta que va al banco por una hipoteca. El prestamista convencional no ve los $250,000 que pasaron por su cuenta; ve los $60,000 del Schedule C. Y con $60,000 no le alcanza para la casa que su negocio sí puede pagar. Esa es la paradoja: lo que le ahorra impuestos en abril le mata la hipoteca en agosto. Le pasa al contratista, al troquero dueño de su unidad, a la dueña del restaurante, al que tiene su taller o su servicio de limpieza — a cualquiera que declare por cuenta propia y deduzca como debe ser.
+El préstamo con estados de cuenta bancarios (bank statement loan) existe exactamente para romper esa paradoja: en lugar de calificarlo con su ingreso gravable, lo califica con los depósitos que entran a su cuenta.
+## Cómo funciona el análisis de depósitos
+
+El prestamista recopila 12 meses de estados de cuenta (a veces 24) y calcula su ingreso calificable a partir de los depósitos:
+Cuenta personal: la mayoría de los programas cuentan cerca del 100% de los depósitos elegibles, porque se asume que los gastos del negocio ya se pagaron antes de que el dinero llegara a su cuenta personal.
+Cuenta del negocio: el prestamista aplica un factor de gastos — comúnmente el 50%, o menos si una carta de su contador (CPA) o un estado de resultados respalda una proporción de gastos más baja. Ejemplo: $40,000 al mes en depósitos del negocio con factor del 50% = $20,000 al mes de ingreso calificable.
+No todo depósito cuenta. Las transferencias entre sus propias cuentas, los préstamos que recibió y las entradas únicas (vendió un equipo, le pagó el seguro) se filtran del análisis — solo cuenta el ingreso recurrente del negocio. Por eso conviene llegar con cuentas limpias, como veremos en el plan de acción.
+## Quién califica: requisitos típicos en 2026
+
+ | Factor | Rango típico
+ | Enganche | Mínimo 10% en expedientes fuertes; con 20%+ mejora el precio
+ | Puntaje de crédito | Existe desde 620+; con 680+ el precio se vuelve competitivo
+ | Tiempo por cuenta propia | 2 años en el mismo negocio (algunos aceptan 1 año si antes trabajó con W-2 en la misma industria)
+ | Prima de tasa | Aproximadamente 0.5 a 1 punto sobre un convencional comparable
+ | Estructuras | Fijo a 30 años, 40 años con periodo de solo interés, tasas ajustables (ARM)
+ | Participación en el negocio | Generalmente 25% o más de propiedad
+Es un producto para trabajadores por cuenta propia. Si usted recibe W-2, su ingreso se documenta por la vía normal y el convencional casi siempre gana. Y si declara sus impuestos con ITIN en lugar de SSN, también hay camino: varios prestamistas combinan el programa ITIN con calificación por estados de cuenta — le conviene leer nuestra guía de préstamos ITIN junto con esta.
+## Ejemplo con números: el contratista de los $250,000
+
+Volvamos al contratista del principio y pongámosle números de hipoteca:
+Por la vía convencional: su declaración muestra $60,000 al año = $5,000 al mes de ingreso calificable. Con una regla de deuda del 45%, su presupuesto total para deudas es de unos $2,250 al mes — y de ahí tienen que salir la hipoteca, la troca y las tarjetas. Alcanza para poco.
+Por estados de cuenta del negocio: a su cuenta entran en promedio $20,800 al mes. Con factor de gastos del 50%, su ingreso calificable es de $10,400 al mes — más del doble.
+Por estados de cuenta personales: si el negocio le transfiere regularmente, digamos, $12,000 al mes a su cuenta personal, muchos programas cuentan cerca del 100% de esos depósitos: $12,000 al mes calificables.
+La diferencia no es un detalle técnico: es la diferencia entre calificar para una casa de $200,000 y calificar para una de $450,000 o más, con el mismo negocio y el mismo dinero real. Lo único que cambió fue qué papel leyó el prestamista.
+## ¿Y contra otras opciones? Convencional y 1099, comparados
+
+Contra el convencional: la prima de 0.5 a 1 punto de tasa no es gratis, y no es un trofeo. Si su declaración de impuestos sí respalda el préstamo que quiere, el convencional gana por precio — punto. Un buen escritorio corre los dos escenarios y le enseña ambos números. La respuesta correcta es la que le da la casa con un pago con el que usted pueda vivir.
+Contra el préstamo 1099: si usted es contratista independiente y casi todo su ingreso llega en formularios 1099, existe una variante que califica con los 1099 de 1-2 años en lugar de estados de cuenta. Suele convenir cuando sus 1099 son altos y estables. Pero si deduce mucho, o su ingreso entra de muchas fuentes, o cobra en depósitos directos irregulares, los estados de cuenta suelen capturar mejor su realidad. Son dos herramientas para el mismo problema; se elige la que califique más ingreso a mejor precio.
+Si lo suyo es invertir en propiedades para rentar: ahí ni siquiera necesita comprobar su ingreso personal — el préstamo DSCR califica con la renta que genera la propiedad. Es la tercera pieza del rompecabezas para el que trabaja por su cuenta.
+## Plan de acción: cinco formas de verse mejor en papel
+
+Separe las cuentas del negocio y las personales. Estados de cuenta limpios se analizan más rápido y califican más ingreso. Si todo está revuelto en una sola cuenta, empiece a separar hoy.
+Reduzca las transferencias entre sus propias cuentas en los meses antes de aplicar. Se excluyen del análisis y ensucian el expediente.
+Deposite con constancia. Doce meses parejos valen más que dos meses gigantes y diez flojos. Y deposite todo lo que gane — el efectivo que nunca entra al banco no existe para el prestamista.
+Documente las entradas grandes que no se repiten (vendió un equipo, cobró un seguro) para que se expliquen en lugar de suponerse.
+Guarde reservas. Varios meses de pagos de hipoteca en el banco fortalecen cualquier aprobación.
+Este préstamo no es el más barato del mercado, pero para el que deduce bien es muchas veces el único que lee su realidad completa. Su negocio ya demostró que genera; ahora se trata de que el papel lo diga. Si quiere el detalle técnico completo, también tenemos la guía completa en inglés.
+
+## Preguntas frecuentes
+
+**¿Cuántos meses de estados de cuenta piden los prestamistas?**
+
+La mayoría de los programas analizan 12 meses; con 24 meses algunos ofrecen mejor precio o más apalancamiento. Existen variantes exprés que usan apenas 2-3 meses, pero con enganches mayores y condiciones más limitadas.
+
+**¿Un préstamo con estados de cuenta cuesta más que uno convencional?**
+
+Sí, típicamente entre 0.5 y 1 punto más de tasa para un expediente comparable, además de un enganche algo mayor. Esa prima compra la posibilidad de calificar con su flujo de efectivo real en lugar del ingreso gravable que queda después de las deducciones.
+
+**¿Es mejor usar estados de cuenta personales o del negocio?**
+
+Los estados personales suelen contar cerca del 100% de los depósitos elegibles, mientras que a los del negocio se les aplica un factor de gastos, comúnmente el 50%. Si su negocio le paga con regularidad a su cuenta personal, los estados personales muchas veces califican más ingreso.
+
+**¿Los empleados con W-2 pueden usar este préstamo?**
+
+Generalmente no. El producto existe para trabajadores por cuenta propia, normalmente con 25% o más de participación en el negocio. Si usted recibe W-2, su ingreso se documenta de la forma tradicional y el préstamo convencional casi siempre le conviene más.
+
+**¿Es lo mismo que los préstamos sin documentos de antes del 2008?**
+
+No. Aquellos préstamos no verificaban nada. El préstamo con estados de cuenta es documentación completa de otro tipo: 12 o más meses de depósitos reales analizados línea por línea, más su crédito, sus activos y el avalúo de la propiedad.
+
+
+---
+
+# Hipoteca para contratistas 1099: califique con su ingreso bruto
+
+URL: https://lumolend.com/es/hipoteca-1099/
+
+## Por qué el banco "no ve" lo que usted realmente gana
+
+Aquí está el choque que frustra a miles de trabajadores independientes. Usted factura bien — digamos $120,000 al año entre sus clientes. Pero su contador hace su trabajo: deduce las millas de la troca, las herramientas, los materiales, el teléfono, el seguro. Al final, la última línea de su Schedule C dice $65,000. Ese número más chico es el que le baja los impuestos... y es exactamente el mismo número que un préstamo convencional usa para calificarlo.
+El banco no está mintiendo cuando dice que sus ingresos "no alcanzan" — está leyendo su declaración de impuestos tal como usted la presentó. Cada dólar que deduce le ahorra centavos en impuestos, pero le cuesta aproximadamente $4 a $5 de capacidad de préstamo en la vía convencional. Esa es la trampa de las deducciones: buena para abril, mala para la hipoteca.
+La buena noticia: la vía convencional no es la única vía.
+## El programa 1099: califique con lo que facturó, no con lo que quedó
+
+Los programas hipotecarios "solo 1099" (un tipo de préstamo non-QM) fueron diseñados justo para este problema. En lugar de pedirle declaraciones de impuestos, el prestamista suma el total bruto de sus formularios 1099 y le resta un factor fijo de gastos — típicamente alrededor del 10%. Es decir, califica con aproximadamente el 90% de lo que facturó, sin importar cuántas deducciones tomó su contador.
+Sin castigo por deducciones: puede seguir deduciendo todo lo legal en sus impuestos. El programa ni siquiera mira su Schedule C.
+Documentos simples: 1 o 2 años de formularios 1099, sin declaraciones de impuestos en el expediente.
+Varias fuentes se suman: cinco clientes de $24,000 cada uno cuentan igual que uno de $120,000. Para troqueros con varios brokers, estilistas con varias sillas, o quien combina delivery con otro trabajo, esto es clave.
+El costo: la tasa es más alta que la convencional — es la prima por la flexibilidad. Pero como verá en el ejemplo, para quien deduce mucho, la diferencia en calificación es mucho más grande que la diferencia en tasa.
+## Ejemplo con números reales: el contratista de $120,000
+
+Don José tiene una cuadrilla de construcción. Sus formularios 1099 del año suman $120,000 brutos. Después de $55,000 en deducciones (troca, herramienta, materiales, ayudantes), su Schedule C neto quedó en $65,000 — unos $5,417 al mes.
+Vía convencional: con un tope de deuda del 45% de sus ingresos, sus $5,417 netos al mes soportan unos $2,437 mensuales en pagos totales de deuda.
+Vía programa 1099: $120,000 × 90% = $108,000, o $9,000 al mes de ingreso calificable. Con el mismo tope del 45%, eso soporta unos $4,050 mensuales.
+Es el mismo negocio, el mismo año, los mismos números — y 66% más capacidad de compra solo por usar el programa correcto. Sí, la tasa del programa 1099 es más alta. Pero para Don José, la vía convencional ni siquiera alcanzaba para la casa que quería; la pregunta no era "¿cuál tasa es mejor?" sino "¿cuál programa me abre la puerta?". Pida siempre que le muestren las cuentas por las dos vías.
+## ¿Y si mi dinero no llega en formularios 1099?
+
+No todos los trabajadores independientes reciben 1099s completos. Si buena parte de sus ingresos entra directo a su cuenta bancaria — depósitos de clientes, transferencias, pagos de aplicaciones — existe una vía hermana: el préstamo con estados de cuenta bancarios, que califica con 12 a 24 meses de depósitos en lugar de formularios. Para muchos dueños de negocio es la mejor opción de todas.
+Y si usted declara impuestos con un ITIN en lugar de un número de Seguro Social, ese tampoco es el final del camino: vea nuestra guía de préstamos ITIN para comprar casa. Varios prestamistas combinan ambas cosas — programas 1099 o de estados de cuenta para solicitantes con ITIN.
+## Requisitos típicos en 2026
+
+ |  | Programa 1099 | Convencional
+ | Ingreso que cuenta | ~88-92% del bruto de sus 1099s | Neto del Schedule C, promedio de 2 años
+ | Declaraciones de impuestos | No se piden | 2 años completos, con todos los anexos
+ | Historial trabajando por su cuenta | 1-2 años de 1099s | 2 años (1 año con W-2 previo en el mismo oficio)
+ | Enganche típico | 10-20%, según perfil | Desde 3-5%
+ | Tasa | Prima sobre la convencional | La mejor del mercado
+Sobre el tiempo trabajando por su cuenta: la regla estándar es dos años, pero hay excepciones reales. Si antes tenía un empleo W-2 en el mismo oficio — por ejemplo, era empleado de una compañía de construcción y ahora contrata por su cuenta — un solo año de 1099s puede bastar. Y algunos programas non-QM aceptan un año de 1099s sin más. Lo que no funciona: seis meses de ingresos y puro optimismo.
+## Qué documentos juntar desde hoy
+
+Un expediente ordenado se aprueba más rápido y consigue mejor precio. Empiece a juntar esto ahora, aunque piense comprar en un año:
+Todos sus formularios 1099 (1099-NEC y 1099-K) de los últimos dos años, de cada cliente, broker o plataforma. Si le falta alguno, pídalo — el total bruto es la base de su calificación.
+Resúmenes anuales de las aplicaciones: Uber, DoorDash, Instacart y similares los emiten cada año. Descárguelos y guárdelos; la captura de pantalla de la app no cuenta para el banco.
+Una cuenta bancaria solo para el negocio. Deposite ahí todo lo que gana. Los depósitos mezclados con gastos personales se descartan, y el dinero en efectivo que nunca toca el banco, para un prestamista, no existe.
+Contratos o cartas de sus clientes que muestren que el trabajo continúa — responden la pregunta del banco antes de que la haga.
+Comprobante del enganche: estados de cuenta que muestren de dónde viene el dinero, idealmente con 60 días o más de historial visible.
+Identificación vigente y, si aplica, su carta de ITIN.
+## El plan de acción
+
+No deje de declarar impuestos. Aunque el programa 1099 no pida declaraciones, otras vías sí — y declarar cada año le mantiene todas las puertas abiertas.
+Decida: impuestos hoy o casa mañana. Si su plan es calificar por la vía convencional en uno o dos años, hable con su contador sobre deducir menos. Si prefiere seguir deduciendo todo, el programa 1099 o los estados de cuenta son su camino — y no hay que sacrificar nada en abril.
+Ordene su banco ya. Doce meses de depósitos limpios en una cuenta dedicada abren la vía de estados de cuenta en buenos términos.
+Compare al menos dos vías y 2-3 ofertas. El error más caro es doble: rendirse tras un "no" convencional sin saber que existen los programas 1099, o aceptar un non-QM caro cuando sus declaraciones sí calificaban convencional. Exija ver las cuentas por las dos vías.
+Si prefiere leer el análisis completo con la escalera de programas y los detalles de la economía gig, aquí está la guía completa en inglés. Y si quiere números para su caso concreto, cotizar toma minutos.
+
+## Preguntas frecuentes
+
+**¿Puedo comprar casa si trabajo por mi cuenta y solo recibo formularios 1099?**
+
+Sí. Existen programas hipotecarios diseñados para contratistas independientes que califican con el total bruto de sus formularios 1099 menos un factor de gastos de alrededor del 10%, sin pedir declaraciones de impuestos. También puede calificar por la vía convencional con dos años de declaraciones, o con estados de cuenta bancarios.
+
+**¿Por qué el banco dice que mis ingresos son muy bajos si yo gano bien?**
+
+Porque los préstamos convencionales usan su ingreso neto después de deducciones — la última línea de su Schedule C — no lo que usted realmente facturó. Cada gasto que deduce (millas, herramientas, materiales) baja sus impuestos, pero también baja el número que el banco usa para calificarlo. Los programas 1099 resuelven esto calificando con el bruto.
+
+**¿Qué es un programa hipotecario "solo 1099"?**
+
+Es un préstamo non-QM que califica con la suma bruta de sus formularios 1099 menos un factor fijo de gastos, típicamente alrededor del 10% — es decir, cuenta aproximadamente el 90% de lo que facturó. No se piden declaraciones de impuestos. Para contratistas con muchas deducciones, puede significar 50% o más de capacidad de compra adicional.
+
+**¿Cuánto tiempo necesito trabajando por mi cuenta para calificar?**
+
+La regla estándar es dos años de trabajo independiente. Un solo año puede funcionar si antes tuvo un empleo W-2 en el mismo oficio, y algunos programas 1099 aceptan un solo año de formularios 1099 directamente. Con menos de un año, use el tiempo para ordenar sus cuentas y documentos.
+
+**¿Cuentan los ingresos de aplicaciones como Uber, DoorDash o Instacart?**
+
+Sí. Las plataformas emiten resúmenes anuales de impuestos y formularios 1099 que los bancos aceptan, y se pueden combinar varias fuentes — por ejemplo, delivery entre semana y transporte los fines de semana. Guarde los documentos oficiales de cada plataforma: una captura de pantalla de la aplicación no cuenta.
